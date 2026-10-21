@@ -20,8 +20,8 @@ const translations = {
         bookBtn: "Ver libro en Amazon",
         donateTitle: "¿Cómo puedes apoyarme?",
         donateSubtitle: "Cualquier contribución me acerca a cubrir el boleto de viaje de regreso y estabilizar mi situación financiera inmediata.",
-        btnFundrazr: "Donar vía FundRazr",
         btnPaypal: "Donar vía PayPal",
+        btnKoFi: "Donar vía KoFi",
         bankTitle: "Transferencia Directa (Ecuador):",
         bankBank: "Banco:",
         bankType: "Tipo de cuenta:",
@@ -50,8 +50,8 @@ const translations = {
         bookBtn: "View book on Amazon",
         donateTitle: "How can you support me?",
         donateSubtitle: "Any contribution helps me afford the return ticket and stabilize my immediate financial situation.",
-        btnFundrazr: "Donate via FundRazr",
         btnPaypal: "Donate via PayPal",
+        btnKoFi: "Donate via KoFi",
         bankTitle: "Direct Bank Transfer (Ecuador):",
         bankBank: "Bank:",
         bankType: "Account Type:",
@@ -80,8 +80,8 @@ const translations = {
         bookBtn: "წიგნის ნახვა Amazon-ზე",
         donateTitle: "როგორ შეგიძლიათ ჩემი მხარდაჭერა?",
         donateSubtitle: "ნებისმიერი წვლილი დამაახლოებს დაბრუნების ბილეთის შეძენასთან.",
-        btnFundrazr: "დონაცია FundRazr-ით",
         btnPaypal: "დონაცია PayPal-ით",
+        btnKoFi: "დონაცია KoFi-ით",
         bankTitle: "პირდაპირი საბანკო გადარიცხვა (ეკვადორი):",
         bankBank: "ბანკი:",
         bankType: "ანგარიშის ტიპი:",
@@ -115,8 +115,8 @@ function setLanguage(lang) {
     document.getElementById('book-btn').innerText = t.bookBtn;
     document.getElementById('donate-title').innerText = t.donateTitle;
     document.getElementById('donate-subtitle').innerText = t.donateSubtitle;
-    document.getElementById('btn-fundrazr').innerText = t.btnFundrazr;
     document.getElementById('btn-paypal').innerText = t.btnPaypal;
+    document.getElementById('btn-kofi').innerText = t.btnKoFi;
     document.getElementById('bank-title').innerText = t.bankTitle;
     document.getElementById('bank-label-bank').innerText = t.bankBank;
     document.getElementById('bank-label-type').innerText = t.bankType;
