@@ -1,98 +1,595 @@
-<html lang="es">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siguiente Destino: Investigación y Ciencia</title>
+    <title id="doc-title">Gabriel Intriago — Siguiente Destino: Investigación y Ciencia</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
 
-    <header class="max-w-4xl mx-auto px-6 pt-12 pb-6 text-center">
-        <span class="text-xs font-bold tracking-widest text-indigo-400 uppercase bg-indigo-950 px-3 py-1 rounded-full border border-indigo-800">
-            Campaña de Retorno, Divulgación e Investigación
-        </span>
-        <h1 class="text-3xl md:text-5xl font-extrabold mt-6 text-white tracking-tight">
-            De Georgia a Ecuador: Ciencia, Divulgación y un Nuevo Comienzo
-        </h1>
-        <p class="mt-4 text-slate-400 text-base md:text-lg max-w-2xl mx-auto">
-            Ayúdame a cubrir el trayecto de regreso y estabilizar mi situación para continuar mi camino de divulgación e investigación científica.
-        </p>
+    <!-- Top Navigation Bar & Language Selector -->
+    <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
+            <!-- Brand / Logo -->
+            <a href="#" class="flex items-center gap-2 font-bold text-lg text-white hover:text-indigo-400 transition">
+                <span class="bg-gradient-to-tr from-indigo-600 to-blue-500 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-lg shadow-indigo-500/30">GI</span>
+                <span class="hidden sm:inline">Gabriel Intriago</span>
+            </a>
+
+            <!-- Language Switcher Buttons -->
+            <div class="flex items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800">
+                <button onclick="setLanguage('es')" id="btn-es" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200">
+                    🇪🇸 Español
+                </button>
+                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200">
+                    🇺🇸 English
+                </button>
+                <button onclick="setLanguage('ka')" id="btn-ka" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200">
+                    🇬🇪 ქართული
+                </button>
+            </div>
+        </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-6 py-8 space-y-8">
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-12 flex-grow w-full">
 
-        <section class="bg-slate-800/60 border border-slate-700/50 p-6 md:p-8 rounded-2xl shadow-xl space-y-4">
-            <h2 class="text-xl font-bold text-indigo-300">Mi Historia y Propósito del Viaje</h2>
-            <p class="text-slate-300 leading-relaxed">
-                Uno de los grandes motivos que impulsó este viaje fue la necesidad de dar a conocer detalles fundamentales sobre temas de interés global que han sido pasados por alto durante mucho tiempo. 
+        <!-- Hero Section -->
+        <section class="text-center space-y-6 pt-4">
+            <div class="inline-block">
+                <span id="badge" class="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-indigo-400 uppercase bg-indigo-950/80 px-4 py-1.5 rounded-full border border-indigo-800/60 shadow-inner">
+                    <i class="fa-solid fa-plane-departure text-indigo-400"></i>
+                    Campaña de Retorno, Divulgación e Investigación
+                </span>
+            </div>
+            
+            <h1 id="hero-title" class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight max-w-3xl mx-auto">
+                De Georgia a Ecuador: Ciencia, Divulgación y un Nuevo Comienzo
+            </h1>
+            
+            <p id="hero-subtitle" class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Ayúdame a cubrir el trayecto de regreso y estabilizar mi situación para continuar mi camino de divulgación e investigación científica.
             </p>
-            <p class="text-slate-300 leading-relaxed">
-                Parte de esta visión quedó plasmada en el libro que escribí con el apoyo de herramientas de inteligencia artificial y que publiqué este año en Amazon, buscando tender puentes entre el conocimiento técnico avanzado y los grandes desafíos globales.
-            </p>
-            <p class="text-slate-300 leading-relaxed">
-                Actualmente me encuentro en Georgia con la meta de regresar a Ecuador. Aunque he postulado a programas de maestría para seguir formándome, aún no he logrado obtener una beca para mis estudios de posgrado. A pesar del impacto económico y las deudas acumuladas, mantengo intacto mi propósito de investigar y divulgar el conocimiento científico.
-            </p>
+
+            <!-- Quick Action Links -->
+            <div class="flex flex-wrap justify-center gap-4 pt-2">
+                <a href="#donate-section" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-6 rounded-xl transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-rose-400"></i>
+                    <span id="hero-donate-btn">Apoyar la Campaña</span>
+                </a>
+                <a href="#story-section" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold py-3 px-6 rounded-xl border border-slate-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-book-open text-indigo-400"></i>
+                    <span id="hero-story-btn">Conocer mi Historia</span>
+                </a>
+            </div>
         </section>
 
-        <section class="bg-slate-800/60 border border-slate-700/50 p-6 md:p-8 rounded-2xl shadow-xl">
-            <h2 class="text-xl font-bold text-indigo-300 mb-4">Áreas de Interés e Investigación</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-700/30">
-                    <h3 class="font-semibold text-white">Física Nuclear y Mecánica Cuántica</h3>
-                    <p class="text-xs text-slate-400 mt-1">Modelado teórico, estructura de la materia y fundamentos de la física moderna.</p>
+        <!-- Progress Tracker & Donation Calculator Simulator -->
+        <section class="bg-gradient-to-b from-slate-900 to-slate-900/90 border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-2xl space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 id="tracker-title" class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line text-indigo-400"></i>
+                        Progreso de la Meta de Vuelo y Estabilización
+                    </h2>
+                    <p id="tracker-subtitle" class="text-xs text-slate-400 mt-1">Meta total estimada para pasajes de avión Tbilisi-Quito y costos de repatriación.</p>
                 </div>
-                <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-700/30">
-                    <h3 class="font-semibold text-white">Climatología</h3>
-                    <p class="text-xs text-slate-400 mt-1">Análisis de datos, física de la atmósfera y cambio climático.</p>
+                <div class="text-right">
+                    <span class="text-2xl font-black text-indigo-400" id="current-amount-display">$1,280</span>
+                    <span class="text-xs text-slate-400" id="goal-amount-display"> / $2,500 USD</span>
                 </div>
-                <div class="p-4 bg-slate-900/50 rounded-xl border border-slate-700/30 md:col-span-2">
-                    <h3 class="font-semibold text-white">Robótica y Sistemas Autónomos</h3>
-                    <p class="text-xs text-slate-400 mt-1">Integración de hardware, automatización y desarrollo de soluciones tecnológicas.</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="space-y-2">
+                <div class="w-full bg-slate-800 rounded-full h-4 overflow-hidden p-0.5 border border-slate-700/50">
+                    <div id="progress-bar" class="bg-gradient-to-r from-indigo-500 via-blue-500 to-teal-400 h-full rounded-full transition-all duration-500" style="width: 51.2%"></div>
+                </div>
+                <div class="flex justify-between text-xs text-slate-400">
+                    <span id="progress-percent">51.2% completado</span>
+                    <span id="progress-needed">Faltan $1,220 USD</span>
+                </div>
+            </div>
+
+            <!-- Interactive Calculator / Simulator -->
+            <div class="bg-slate-950/60 p-4 sm:p-5 rounded-2xl border border-slate-800/80 space-y-4">
+                <h3 id="sim-title" class="text-sm font-semibold text-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-calculator text-indigo-400"></i>
+                    Simula tu impacto con un aporte
+                </h3>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button onclick="setSimAmount(10)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-sm font-medium transition">$10</button>
+                    <button onclick="setSimAmount(25)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-sm font-medium transition">$25</button>
+                    <button onclick="setSimAmount(50)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-sm font-medium transition">$50</button>
+                    <button onclick="setSimAmount(100)" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-sm font-medium transition">$100</button>
+                    
+                    <div class="relative flex-grow min-w-[140px]">
+                        <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-sm">$</span>
+                        <input type="number" id="sim-input" placeholder="Otro monto" oninput="updateSim()" min="1" class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-7 pr-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500 transition">
+                    </div>
+                </div>
+
+                <div id="sim-result" class="p-3 bg-indigo-950/40 border border-indigo-900/50 rounded-xl text-xs text-indigo-200 flex items-center gap-2">
+                    <i class="fa-solid fa-circle-info text-indigo-400 shrink-0"></i>
+                    <span id="sim-result-text">Selecciona o ingresa un monto para ver cómo contribuyes a acercarme a Ecuador.</span>
                 </div>
             </div>
         </section>
 
-        <section class="bg-slate-800/40 border border-indigo-900/40 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-4">
-            <div>
-                <h3 class="text-lg font-bold text-white">Publicación en Amazon</h3>
-                <p class="text-xs text-slate-400 mt-1">Conoce más sobre las ideas e investigaciones plasmadas en mi obra recientemente publicada.</p>
+        <!-- Story & Purpose Section -->
+        <section id="story-section" class="bg-slate-900/70 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-4 relative overflow-hidden">
+            <div class="absolute -right-12 -top-12 w-48 h-48 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <h2 id="story-title" class="text-2xl font-bold text-indigo-300 flex items-center gap-2">
+                <i class="fa-solid fa-compass text-indigo-400"></i>
+                Mi Historia y Propósito del Viaje
+            </h2>
+            <div class="space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+                <p id="story-p1">
+                    Uno de los grandes motivos que impulsó este viaje fue la necesidad de dar a conocer detalles fundamentales sobre temas de interés global que han sido pasados por alto durante mucho tiempo.
+                </p>
+                <p id="story-p2">
+                    Parte de esta visión quedó plasmada en mi libro "Tras la Huella del Enemigo", escrito con el apoyo de herramientas de inteligencia artificial y publicado en Amazon, buscando tender puentes entre el conocimiento técnico avanzado y los grandes desafíos globales.
+                </p>
+                <p id="story-p3">
+                    Actualmente me encuentro en Georgia con la meta de regresar a Ecuador. Aunque he postulado a programas de maestría para seguir formándome, aún no he logrado obtener una beca para mis estudios de posgrado. A pesar del impacto económico y las deudas acumuladas, mantengo intacto mi propósito de investigar y divulgar el conocimiento científico.
+                </p>
             </div>
-            <a href="https://a.co/d/0wVsX5C" target="_blank" class="whitespace-nowrap bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs font-semibold py-2.5 px-5 rounded-lg border border-slate-600 transition">
-                Ver libro en Amazon
+        </section>
+
+        <!-- Research Areas Section -->
+        <section class="bg-slate-900/70 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-6">
+            <h2 id="research-title" class="text-2xl font-bold text-indigo-300 flex items-center gap-2">
+                <i class="fa-solid fa-flask text-indigo-400"></i>
+                Áreas de Interés e Investigación
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Area 1 -->
+                <div class="p-5 bg-slate-950/60 rounded-2xl border border-slate-800/80 hover:border-indigo-500/50 transition group">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-950 text-indigo-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-atom text-lg"></i>
+                    </div>
+                    <h3 id="area-1-title" class="font-bold text-white text-base">Física Nuclear y Cuántica</h3>
+                    <p id="area-1-desc" class="text-xs text-slate-400 mt-2 leading-relaxed">Modelado teórico, estructura de la materia y fundamentos de la física moderna.</p>
+                </div>
+
+                <!-- Area 2 -->
+                <div class="p-5 bg-slate-950/60 rounded-2xl border border-slate-800/80 hover:border-indigo-500/50 transition group">
+                    <div class="w-10 h-10 rounded-xl bg-blue-950 text-blue-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-cloud-sun-rain text-lg"></i>
+                    </div>
+                    <h3 id="area-2-title" class="font-bold text-white text-base">Climatología</h3>
+                    <p id="area-2-desc" class="text-xs text-slate-400 mt-2 leading-relaxed">Análisis de datos, física de la atmósfera y modelos de cambio climático.</p>
+                </div>
+
+                <!-- Area 3 -->
+                <div class="p-5 bg-slate-950/60 rounded-2xl border border-slate-800/80 hover:border-indigo-500/50 transition group">
+                    <div class="w-10 h-10 rounded-xl bg-teal-950 text-teal-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-robot text-lg"></i>
+                    </div>
+                    <h3 id="area-3-title" class="font-bold text-white text-base">Robótica y Autonomía</h3>
+                    <p id="area-3-desc" class="text-xs text-slate-400 mt-2 leading-relaxed">Integración de hardware, automatización y desarrollo de soluciones tecnológicas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amazon Book Highlight -->
+        <section class="bg-gradient-to-r from-slate-900 via-indigo-950/30 to-slate-900 border border-indigo-900/40 p-6 sm:p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+            <div class="space-y-2 text-center md:text-left">
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider bg-indigo-950 px-3 py-1 rounded-md border border-indigo-800/50">
+                    <i class="fa-brands fa-amazon mr-1"></i> Publicación Disponible
+                </span>
+                <h3 id="book-title" class="text-xl font-bold text-white pt-1">Obra: "Tras la Huella del Enemigo"</h3>
+                <p id="book-desc" class="text-xs sm:text-sm text-slate-300 max-w-xl">
+                    Conoce más sobre las ideas, análisis e investigaciones plasmadas en mi obra escrita con apoyo de inteligencia artificial y publicada en Amazon.
+                </p>
+            </div>
+            <a href="https://www.amazon.com" target="_blank" id="book-btn" class="whitespace-nowrap bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm py-3 px-6 rounded-xl transition flex items-center gap-2 shadow-lg shadow-amber-500/20 shrink-0">
+                <i class="fa-solid fa-book"></i>
+                <span>Ver libro en Amazon</span>
             </a>
         </section>
 
-        <section class="bg-indigo-950/40 border border-indigo-500/30 p-6 md:p-8 rounded-2xl text-center space-y-6">
-            <h2 class="text-2xl font-bold text-white">¿Cómo puedes apoyarme?</h2>
-            <p class="text-slate-300 text-sm max-w-lg mx-auto">
-                Cualquier contribución me acerca a cubrir el boleto de viaje a Australia y estabilizar mi situación financiera inmediata.
-            </p>
+        <!-- Donation & Support Section -->
+        <section id="donate-section" class="bg-indigo-950/30 border border-indigo-500/30 p-6 sm:p-10 rounded-3xl text-center space-y-8 relative">
+            <div class="space-y-3 max-w-2xl mx-auto">
+                <h2 id="donate-title" class="text-2xl sm:text-3xl font-extrabold text-white">¿Cómo puedes apoyarme?</h2>
+                <p id="donate-subtitle" class="text-slate-300 text-sm sm:text-base">
+                    Cualquier contribución me acerca a cubrir el boleto de viaje de regreso y estabilizar mi situación financiera inmediata.
+                </p>
+            </div>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://paypal.me/TU_USUARIO" target="_blank" 
-                   class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-xl transition shadow-lg shadow-blue-600/30 text-sm">
-                    Donar vía PayPal
+            <!-- International Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                <a href="https://paypal.me" target="_blank" id="btn-paypal" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-lg shadow-blue-600/30 text-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-paypal"></i>
+                    <span>Donar vía PayPal</span>
                 </a>
-                <a href="https://ko-fi.com/gabrielintriago" target="_blank" 
-                   class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-xl transition shadow-lg shadow-orange-600/30 text-sm">
-                    Donar vía KoFi
+                <a href="https://ko-fi.com/gabrielintriago" target="_blank" id="btn-paypal" class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-lg shadow-orange-600/30 text-sm flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-kofi"></i>
+                    <span>Donar vía KoFi</span>
                 </a>
             </div>
 
-            <div class="mt-6 pt-6 border-t border-slate-700/50 text-left max-w-md mx-auto bg-slate-900/60 p-4 rounded-xl text-xs text-slate-300 space-y-1">
-                <p class="font-bold text-indigo-300 mb-2">Transferencia Directa (Ecuador):</p>
-                <p><span class="text-slate-400">Banco:</span> Banco del Pacífico </p>
-                <p><span class="text-slate-400">Tipo de cuenta:</span> Ahorros </p>
-                <p><span class="text-slate-400">Número:</span> 1044200439</p>
-                <p><span class="text-slate-400">Titular / C.I.:</span> Gabriel Intriago - 1315908762</p>
+            <!-- Direct Bank Transfer Details (Ecuador) -->
+            <div class="mt-8 pt-6 border-t border-slate-800 text-left max-w-md mx-auto bg-slate-900/90 p-5 rounded-2xl border border-slate-800 text-xs text-slate-300 space-y-2 shadow-inner">
+                <div class="flex items-center gap-2 text-indigo-300 font-bold text-sm mb-3">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span id="bank-title">Transferencia Directa (Ecuador):</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-800">
+                    <span id="bank-label-bank" class="text-slate-400">Banco:</span>
+                    <span class="font-medium text-white">Pichincha / Guayaquil</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-800">
+                    <span id="bank-label-type" class="text-slate-400">Tipo de cuenta:</span>
+                    <span class="font-medium text-white">Ahorros</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-slate-800">
+                    <span id="bank-label-num" class="text-slate-400">Número de Cuenta:</span>
+                    <span class="font-mono text-indigo-400 font-bold">220XXXXXXX</span>
+                </div>
+                <div class="flex justify-between py-1">
+                    <span id="bank-label-owner" class="text-slate-400">Titular / C.I.:</span>
+                    <span class="font-medium text-white">Gabriel Intriago</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donor Support Message Wall Section -->
+        <section class="bg-slate-900/70 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-6">
+            <div class="text-center space-y-2">
+                <h2 id="msg-section-title" class="text-xl font-bold text-white flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-comments text-indigo-400"></i>
+                    Muro de Apoyo y Mensajes
+                </h2>
+                <p id="msg-section-subtitle" class="text-xs text-slate-400">Déjale un mensaje de ánimo o palabras de apoyo a Gabriel.</p>
+            </div>
+
+            <!-- Form -->
+            <form onsubmit="addSupportMessage(event)" class="space-y-4 bg-slate-950/60 p-5 rounded-2xl border border-slate-800">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label id="msg-name-label" class="block text-xs font-medium text-slate-300 mb-1">Nombre o Apodo</label>
+                        <input type="text" id="msg-name" required placeholder="Ej. Ana M." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label id="msg-country-label" class="block text-xs font-medium text-slate-300 mb-1">País</label>
+                        <input type="text" id="msg-country" placeholder="Ej. Ecuador / España" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                </div>
+                <div>
+                    <label id="msg-text-label" class="block text-xs font-medium text-slate-300 mb-1">Tu mensaje de apoyo</label>
+                    <textarea id="msg-text" required rows="2" placeholder="Escribe tus palabras de apoyo aquí..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"></textarea>
+                </div>
+                <button type="submit" id="msg-submit-btn" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs py-2.5 px-6 rounded-xl transition">
+                    Enviar Mensaje
+                </button>
+            </form>
+
+            <!-- Wall Messages Container -->
+            <div id="messages-wall" class="space-y-3 pt-2">
+                <!-- Initial Mock Message -->
+                <div class="p-4 bg-slate-950/40 rounded-2xl border border-slate-800/60 text-xs space-y-1">
+                    <div class="flex justify-between items-center text-slate-400">
+                        <span class="font-bold text-indigo-300">Carlos R. <span class="text-slate-500 font-normal">(Ecuador)</span></span>
+                        <span class="text-[10px]">Hace un momento</span>
+                    </div>
+                    <p class="text-slate-300">¡Mucho ánimo Gabriel! La ciencia en nuestro país necesita gente con tu vocación y perseverancia. Buen viaje de regreso.</p>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="text-center py-6 text-xs text-slate-500 border-t border-slate-800">
-        <p>© 2026 — Campaña personal de divulgación y recaudación de fondos</p>
+    <!-- Footer -->
+    <footer class="text-center py-8 text-xs text-slate-500 border-t border-slate-800/80 bg-slate-950">
+        <p id="footer-text">© 2026 — Campaña personal de divulgación y recaudación de fondos de Gabriel Intriago</p>
     </footer>
-    <script src="translations.js"></script>
+
+    <!-- EMBEDDED TRANSLATION & LOGIC SCRIPT (Guarantees zero 404/external file errors on GitHub Pages) -->
+    <script>
+        // Goal Tracking State
+        const goalTotal = 2500;
+        let currentAmount = 1280;
+
+        // Translation Dictionary
+        const translations = {
+            es: {
+                docTitle: "Gabriel Intriago — Siguiente Destino: Investigación y Ciencia",
+                badge: "Campaña de Retorno, Divulgación e Investigación",
+                heroTitle: "De Georgia a Ecuador: Ciencia, Divulgación y un Nuevo Comienzo",
+                heroSubtitle: "Ayúdame a cubrir el trayecto de regreso y estabilizar mi situación para continuar mi camino de divulgación e investigación científica.",
+                heroDonateBtn: "Apoyar la Campaña",
+                heroStoryBtn: "Conocer mi Historia",
+                trackerTitle: "Progreso de la Meta de Vuelo y Estabilización",
+                trackerSubtitle: "Meta total estimada para pasajes de avión Tbilisi-Quito y costos de repatriación.",
+                simTitle: "Simula tu impacto con un aporte",
+                storyTitle: "Mi Historia y Propósito del Viaje",
+                storyP1: "Uno de los grandes motivos que impulsó este viaje fue la necesidad de dar a conocer detalles fundamentales sobre temas de interés global que han sido pasados por alto durante mucho tiempo.",
+                storyP2: "Parte de esta visión quedó plasmada en mi libro \"Tras la Huella del Enemigo\", escrito con el apoyo de herramientas de inteligencia artificial y publicado en Amazon, buscando tender puentes entre el conocimiento técnico avanzado y los grandes desafíos globales.",
+                storyP3: "Actualmente me encuentro en Georgia con la meta de regresar a Ecuador. Aunque he postulado a programas de maestría para seguir formándome, aún no he logrado obtener una beca para mis estudios de posgrado. A pesar del impacto económico y las deudas acumuladas, mantengo intacto mi propósito de investigar y divulgar el conocimiento científico.",
+                researchTitle: "Áreas de Interés e Investigación",
+                area1Title: "Física Nuclear y Cuántica",
+                area1Desc: "Modelado teórico, estructura de la materia y fundamentos de la física moderna.",
+                area2Title: "Climatología",
+                area2Desc: "Análisis de datos, física de la atmósfera y modelos de cambio climático.",
+                area3Title: "Robótica y Autonomía",
+                area3Desc: "Integración de hardware, automatización y desarrollo de soluciones tecnológicas.",
+                bookTitle: "Obra: \"Tras la Huella del Enemigo\"",
+                bookDesc: "Conoce más sobre las ideas, análisis e investigaciones plasmadas en mi obra escrita con apoyo de inteligencia artificial y publicada en Amazon.",
+                bookBtn: "Ver libro en Amazon",
+                donateTitle: "¿Cómo puedes apoyarme?",
+                donateSubtitle: "Cualquier contribución me acerca a cubrir el boleto de viaje de regreso y estabilizar mi situación financiera inmediata.",
+                btnFundrazr: "Donar vía FundRazr",
+                btnPaypal: "Donar vía PayPal",
+                bankTitle: "Transferencia Directa (Ecuador):",
+                bankBank: "Banco:",
+                bankType: "Tipo de cuenta:",
+                bankNum: "Número de Cuenta:",
+                bankOwner: "Titular / C.I.:",
+                msgSecTitle: "Muro de Apoyo y Mensajes",
+                msgSecSub: "Déjale un mensaje de ánimo o palabras de apoyo a Gabriel.",
+                msgNameLabel: "Nombre o Apodo",
+                msgCountryLabel: "País",
+                msgTextLabel: "Tu mensaje de apoyo",
+                msgSubmitBtn: "Enviar Mensaje",
+                footerText: "© 2026 — Campaña personal de divulgación y recaudación de fondos de Gabriel Intriago",
+                simPrompt: "Selecciona o ingresa un monto para ver cómo contribuyes a acercarme a Ecuador.",
+                simResultText: (val, newPct) => `¡Un aporte de $${val} USD llevaría el progreso de la meta al ${newPct}%!`
+            },
+            en: {
+                docTitle: "Gabriel Intriago — Next Destination: Research and Science",
+                badge: "Return, Science Outreach & Research Campaign",
+                heroTitle: "From Georgia to Ecuador: Science, Outreach, and a New Beginning",
+                heroSubtitle: "Help me cover my return journey and stabilize my situation to continue my path in scientific outreach and research.",
+                heroDonateBtn: "Support Campaign",
+                heroStoryBtn: "Read My Story",
+                trackerTitle: "Flight & Relocation Goal Progress",
+                trackerSubtitle: "Estimated total goal for Tbilisi-Quito plane tickets and repatriation setup.",
+                simTitle: "Simulate your impact with a contribution",
+                storyTitle: "My Story and Purpose of the Journey",
+                storyP1: "One of the main reasons behind this journey was the need to shed light on crucial global topics that have been overlooked for a long time.",
+                storyP2: "Part of this vision was published in my book \"Tras la Huella del Enemigo\", co-authored with AI tools on Amazon, bridging advanced technical knowledge with major global challenges.",
+                storyP3: "I am currently in Georgia aiming to return to Ecuador. Although I have applied to master's programs, I have not yet secured a scholarship. Despite financial hardship and accumulated debt, my passion to research and communicate science remains fully intact.",
+                researchTitle: "Research Areas & Interests",
+                area1Title: "Nuclear & Quantum Physics",
+                area1Desc: "Theoretical modeling, structure of matter, and foundations of modern physics.",
+                area2Title: "Climatology",
+                area2Desc: "Data analysis, atmospheric physics, and climate change models.",
+                area3Title: "Robotics & Autonomy",
+                area3Desc: "Hardware integration, automation, and technological solutions.",
+                bookTitle: "Book: \"Tras la Huella del Enemigo\"",
+                bookDesc: "Discover the research and ideas published in my book written with AI assistance on Amazon.",
+                bookBtn: "View Book on Amazon",
+                donateTitle: "How can you support me?",
+                donateSubtitle: "Any contribution helps me afford the return ticket and stabilize my immediate financial situation.",
+                btnFundrazr: "Donate via FundRazr",
+                btnPaypal: "Donate via PayPal",
+                bankTitle: "Direct Bank Transfer (Ecuador):",
+                bankBank: "Bank:",
+                bankType: "Account Type:",
+                bankNum: "Account Number:",
+                bankOwner: "Account Holder / ID:",
+                msgSecTitle: "Support Message Wall",
+                msgSecSub: "Leave a encouragement message or supportive words for Gabriel.",
+                msgNameLabel: "Name or Nickname",
+                msgCountryLabel: "Country",
+                msgTextLabel: "Your message of support",
+                msgSubmitBtn: "Send Message",
+                footerText: "© 2026 — Gabriel Intriago Personal Fundraising & Science Campaign",
+                simPrompt: "Select or enter an amount to see how you help bring me closer to Ecuador.",
+                simResultText: (val, newPct) => `A contribution of $${val} USD would boost our flight goal to ${newPct}%!`
+            },
+            ka: {
+                docTitle: "გაბრიელ ინტრიაგო — კვლევა და მეცნიერება",
+                badge: "დაბრუნების, მეცნიერებისა და კვლევის კამპანია",
+                heroTitle: "საქართველოდან ეკვადორამდე: მეცნიერება და ახალი დასაწყისი",
+                heroSubtitle: "დამეხმარეთ დაბრუნების გზის დაფარვაში და ფინანსური მდგომარეობის სტაბილიზაციაში სამეცნიერო კვლევების დასაბრუნებლად.",
+                heroDonateBtn: "კამპანიის მხარდაჭერა",
+                heroStoryBtn: "ჩემი ისტორია",
+                trackerTitle: "ფრენისა და რეპატრიაციის მიზნის პროგრესი",
+                trackerSubtitle: "თბილისი-კიტოს ავიაბილეთებისა და დაბრუნების ხარჯები.",
+                simTitle: "სიპროგრესო კალკულატორი",
+                storyTitle: "ჩემი ისტორია და მოგზაურობის მიზანი",
+                storyP1: "ამ მოგზაურობის ერთ-ერთი მთავარი მიზანი იყო გლობალური მნიშვნელობის თემების გაშუქება, რომლებიც დიდხანს რჩებოდა ყურადღების მიღმა.",
+                storyP2: "ეს ხედვა ასახულია ჩემს წიგნში, რომელიც ხელოვნური ინტელექტის დახმარებით დაიწერა და Amazon-ზე გამოქვეყნდა.",
+                storyP3: "ამჟამად ვიმყოფები საქართველოში ეკვადორში დაბრუნების მიზნით. მიუხედავად ფინანსური სირთულეებისა, ჩემი მიზანი მეცნიერული კვლევების გაგრძელებაა.",
+                researchTitle: "კვლევის სფეროები და ინტერესები",
+                area1Title: "ბირთვული და კვანტური ფიზიკა",
+                area1Desc: "თეორიული მოდელირება, მატერიის სტრუქტურა და თანამედროვე ფიზიკა.",
+                area2Title: "კლიმატოლოგია",
+                area2Desc: "მონაცემთა ანალიზი, ატმოსფერული ფიზიკა და კლიმატის ცვლილება.",
+                area3Title: "რობოტიქსი და ავტონომია",
+                area3Desc: "აპარატურის ინტეგრაცია, ავტომატიზაცია და ტექნოლოგიური გადაწყვეტილებები.",
+                bookTitle: "წიგნი: \"Tras la Huella del Enemigo\"",
+                bookDesc: "გაეცანით ჩემს წიგნში წარმოდგენილ იდეებსა და კვლევებს Amazon-ზე.",
+                bookBtn: "წიგნის ნახვა Amazon-ზე",
+                donateTitle: "როგორ შეგიძლიათ ჩემი მხარდაჭერა?",
+                donateSubtitle: "ნებისმიერი წვლილი დამაახლოებს დაბრუნების ბილეთის შეძენასთან.",
+                btnFundrazr: "დონაცია FundRazr-ით",
+                btnPaypal: "დონაცია PayPal-ით",
+                bankTitle: "პირდაპირი საბანკო გადარიცხვა (ეკვადორი):",
+                bankBank: "ბანკი:",
+                bankType: "ანგარიშის ტიპი:",
+                bankNum: "ანგარიშის ნომერი:",
+                bankOwner: "მფლობელი / ID:",
+                msgSecTitle: "მხარდაჭერის კედელი",
+                msgSecSub: "დაუტოვეთ მხარდამჭერი შეტყობინება გაბრიელს.",
+                msgNameLabel: "სახელი",
+                msgCountryLabel: "ქვეყანა",
+                msgTextLabel: "თქვენი შეტყობინება",
+                msgSubmitBtn: "შეტყობინების გაგზავნა",
+                footerText: "© 2026 — გაბრიელ ინტრიაგოს პირადი სამეცნიერო კამპანია",
+                simPrompt: "აირჩიეთ თანხა პროგრესის სანახავად.",
+                simResultText: (val, newPct) => `$${val} დოლარის წვლილი გაზრდის პროგრესს ${newPct}%-მდე!`
+            }
+        };
+
+        let currentLang = 'es';
+
+        // Set Active Language Function
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            if (!t) return;
+
+            document.getElementById('doc-title').innerText = t.docTitle;
+            document.getElementById('badge').innerText = t.badge;
+            document.getElementById('hero-title').innerText = t.heroTitle;
+            document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
+            document.getElementById('hero-donate-btn').innerText = t.heroDonateBtn;
+            document.getElementById('hero-story-btn').innerText = t.heroStoryBtn;
+            
+            document.getElementById('tracker-title').innerText = t.trackerTitle;
+            document.getElementById('tracker-subtitle').innerText = t.trackerSubtitle;
+            document.getElementById('sim-title').innerText = t.simTitle;
+
+            document.getElementById('story-title').innerText = t.storyTitle;
+            document.getElementById('story-p1').innerText = t.storyP1;
+            document.getElementById('story-p2').innerText = t.storyP2;
+            document.getElementById('story-p3').innerText = t.storyP3;
+
+            document.getElementById('research-title').innerText = t.researchTitle;
+            document.getElementById('area-1-title').innerText = t.area1Title;
+            document.getElementById('area-1-desc').innerText = t.area1Desc;
+            document.getElementById('area-2-title').innerText = t.area2Title;
+            document.getElementById('area-2-desc').innerText = t.area2Desc;
+            document.getElementById('area-3-title').innerText = t.area3Title;
+            document.getElementById('area-3-desc').innerText = t.area3Desc;
+
+            document.getElementById('book-title').innerText = t.bookTitle;
+            document.getElementById('book-desc').innerText = t.bookDesc;
+            document.getElementById('book-btn').querySelector('span').innerText = t.bookBtn;
+
+            document.getElementById('donate-title').innerText = t.donateTitle;
+            document.getElementById('donate-subtitle').innerText = t.donateSubtitle;
+            document.getElementById('btn-fundrazr').querySelector('span').innerText = t.btnFundrazr;
+            document.getElementById('btn-paypal').querySelector('span').innerText = t.btnPaypal;
+
+            document.getElementById('bank-title').innerText = t.bankTitle;
+            document.getElementById('bank-label-bank').innerText = t.bankBank;
+            document.getElementById('bank-label-type').innerText = t.bankType;
+            document.getElementById('bank-label-num').innerText = t.bankNum;
+            document.getElementById('bank-label-owner').innerText = t.bankOwner;
+
+            document.getElementById('msg-section-title').innerText = t.msgSecTitle;
+            document.getElementById('msg-section-subtitle').innerText = t.msgSecSub;
+            document.getElementById('msg-name-label').innerText = t.msgNameLabel;
+            document.getElementById('msg-country-label').innerText = t.msgCountryLabel;
+            document.getElementById('msg-text-label').innerText = t.msgTextLabel;
+            document.getElementById('msg-submit-btn').innerText = t.msgSubmitBtn;
+
+            document.getElementById('footer-text').innerText = t.footerText;
+
+            // Highlight Active Language Button
+            ['es', 'en', 'ka'].forEach(l => {
+                const btn = document.getElementById(`btn-${l}`);
+                if (l === lang) {
+                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white shadow-md shadow-indigo-600/30 transition-all duration-200";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all duration-200";
+                }
+            });
+
+            updateSim();
+        }
+
+        // Donation Calculator Simulator Logic
+        function setSimAmount(amount) {
+            document.getElementById('sim-input').value = amount;
+            updateSim();
+        }
+
+        function updateSim() {
+            const val = parseFloat(document.getElementById('sim-input').value);
+            const simText = document.getElementById('sim-result-text');
+            const t = translations[currentLang];
+
+            if (isNaN(val) || val <= 0) {
+                simText.innerText = t.simPrompt;
+                return;
+            }
+
+            const simulatedTotal = currentAmount + val;
+            const newPercentage = ((simulatedTotal / goalTotal) * 100).toFixed(1);
+            simText.innerText = t.simResultText(val, newPercentage);
+        }
+
+        // Interactive Support Wall Form
+        function addSupportMessage(event) {
+            event.preventDefault();
+            const name = document.getElementById('msg-name').value.trim();
+            const country = document.getElementById('msg-country').value.trim();
+            const text = document.getElementById('msg-text').value.trim();
+
+            if (!name || !text) return;
+
+            const wall = document.getElementById('messages-wall');
+            const card = document.createElement('div');
+            card.className = "p-4 bg-slate-950/60 rounded-2xl border border-indigo-900/50 text-xs space-y-1 animate-fade-in";
+            
+            const countryLabel = country ? ` (${country})` : '';
+            card.innerHTML = `
+                <div class="flex justify-between items-center text-slate-400">
+                    <span class="font-bold text-indigo-300">${escapeHtml(name)} <span class="text-slate-500 font-normal">${escapeHtml(countryLabel)}</span></span>
+                    <span class="text-[10px] text-indigo-400 font-semibold">Ahora mismo</span>
+                </div>
+                <p class="text-slate-200">${escapeHtml(text)}</p>
+            `;
+
+            wall.prepend(card);
+
+            // Reset form inputs
+            document.getElementById('msg-name').value = '';
+            document.getElementById('msg-country').value = '';
+            document.getElementById('msg-text').value = '';
+        }
+
+        function escapeHtml(string) {
+            return String(string).replace(/[&<>"']/g, function (s) {
+                return {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#39;'
+                }[s];
+            });
+        }
+
+        // Initial launch
+        window.onload = function() {
+            setLanguage('es');
+        };
+    </script>
 </body>
 </html>
