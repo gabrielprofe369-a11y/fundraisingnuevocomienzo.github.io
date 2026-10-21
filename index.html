@@ -267,30 +267,30 @@
         <!-- Donor Support Message Wall Section -->
         <section class="bg-slate-900/70 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-6">
             <div class="text-center space-y-2">
-                <h2 id="msgSecTitle" class="text-xl font-bold text-white flex items-center justify-center gap-2">
+                <h2 id="msg-sec-title" class="text-xl font-bold text-white flex items-center justify-center gap-2">
                     <i class="fa-solid fa-comments text-indigo-400"></i>
                     Muro de Apoyo y Mensajes
                 </h2>
-                <p id="msgSecSub" class="text-xs text-slate-400">Déjale un mensaje de ánimo o palabras de apoyo a Gabriel.</p>
+                <p id="msg-sec-sub" class="text-xs text-slate-400">Déjale un mensaje de ánimo o palabras de apoyo a Gabriel.</p>
             </div>
 
             <!-- Form -->
             <form onsubmit="addSupportMessage(event)" class="space-y-4 bg-slate-950/60 p-5 rounded-2xl border border-slate-800">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                        <label id="msgNameLabel" class="block text-xs font-medium text-slate-300 mb-1">Nombre o Apodo</label>
-                        <input type="text" id="msg-name" required placeholder="Ej. Ana M." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
+                        <label id="msg-name-label" class="block text-xs font-medium text-slate-300 mb-1">Nombre o Apodo</label>
+                        <input type="text" id="msg-name-label" required placeholder="Ej. Ana M." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
                     </div>
                     <div>
-                        <label id="msgCountryLabel" class="block text-xs font-medium text-slate-300 mb-1">País</label>
-                        <input type="text" id="msg-country" placeholder="Ej. Ecuador / España" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
+                        <label id="msg-country-label" class="block text-xs font-medium text-slate-300 mb-1">País</label>
+                        <input type="text" id="msg-country-label" placeholder="Ej. Ecuador / España" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
                     </div>
                 </div>
                 <div>
-                    <label id="msgTextLabel" class="block text-xs font-medium text-slate-300 mb-1">Tu mensaje de apoyo</label>
-                    <textarea id="msg-text" required rows="2" placeholder="Escribe tus palabras de apoyo aquí..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"></textarea>
+                    <label id="msg-text-label" class="block text-xs font-medium text-slate-300 mb-1">Tu mensaje de apoyo</label>
+                    <textarea id="msg-text-label" required rows="2" placeholder="Escribe tus palabras de apoyo aquí..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"></textarea>
                 </div>
-                <button type="submit" id="msgSubmitBtn" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs py-2.5 px-6 rounded-xl transition">
+                <button type="submit" id="msg-submit-btn" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs py-2.5 px-6 rounded-xl transition">
                     Enviar Mensaje
                 </button>
             </form>
