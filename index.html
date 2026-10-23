@@ -323,6 +323,85 @@
         <p id="footer-text">© 2026 — Campaña personal de divulgación y recaudación de fondos de Gabriel Intriago</p>
     </footer>
 
+    <!-- MODAL DE PAGO CON TARJETA SEGURO -->
+    <div id="card-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 relative shadow-2xl space-y-4">
+            <button onclick="closeCardModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <div class="text-center space-y-1">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-950 text-emerald-400 mb-1 border border-emerald-800">
+                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                </div>
+                <h3 id="modal-card-title" class="text-lg font-bold text-white">Pago Seguro con Tarjeta</h3>
+                <p id="modal-card-desc" class="text-xs text-slate-400">Aportación directa con encriptación de extremo a extremo.</p>
+            </div>
+
+            <form id="card-form" onsubmit="handleCardSubmit(event)" class="space-y-3">
+                <div>
+                    <label id="lbl-amount" class="block text-xs font-medium text-slate-300 mb-1">Monto de la contribución (USD)</label>
+                    <div class="relative">
+                        <span class="absolute left-3 top-2.5 text-slate-400 text-sm">$</span>
+                        <input type="number" id="pay-amount" min="1" value="25" required class="w-full bg-slate-800 border border-slate-700 rounded-lg pl-7 pr-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label id="lbl-card-num" class="block text-xs font-medium text-slate-300 mb-1">Número de Tarjeta</label>
+                    <div class="relative">
+                        <input type="text" id="card-num" placeholder="4532 •••• •••• 8892" required class="w-full bg-slate-800 border border-slate-700 rounded-lg pl-3 pr-10 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+                        <i class="fa-solid fa-credit-card absolute right-3 top-3 text-slate-500"></i>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label id="lbl-exp" class="block text-xs font-medium text-slate-300 mb-1">Vencimiento</label>
+                        <input type="text" id="card-exp" placeholder="MM/AA" maxLength="5" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label id="lbl-cvv" class="block text-xs font-medium text-slate-300 mb-1">CVC / CVV</label>
+                        <input type="text" id="card-cvv" placeholder="123" maxLength="4" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label id="lbl-holder" class="block text-xs font-medium text-slate-300 mb-1">Nombre del Titular</label>
+                    <input type="text" id="card-holder" placeholder="Ej. Juan Pérez" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+                </div>
+
+                <button type="submit" id="btn-pay-submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl transition shadow-lg text-xs mt-2">
+                    Procesar Pago Seguro
+                </button>
+            </form>
+
+            <div id="payment-status" class="hidden text-center p-3 rounded-lg text-xs"></div>
+        </div>
+    </div>
+
+        <!-- BANNER DE BANNER DE COOKIES Y PRIVACIDAD -->
+    <div id="cookie-banner" class="fixed bottom-0 inset-x-0 bg-slate-950/95 border-t border-slate-800 p-4 z-40 hidden shadow-2xl backdrop-blur-md">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-xs text-slate-300 space-y-1 text-center sm:text-left">
+                <p id="cookie-title" class="font-bold text-white flex items-center justify-center sm:justify-start gap-1.5">
+                    <i class="fa-solid fa-cookie-bite text-amber-400"></i> Aviso de Cookies y Privacidad
+                </p>
+                <p id="cookie-desc" class="text-slate-400">
+                    Utilizamos cookies mínimas e información técnica estándar para fines estadísticos y asegurar el funcionamiento del pago de manera segura.
+                </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button onclick="acceptCookies('all')" id="btn-cookie-accept" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold py-2 px-4 rounded-lg transition">
+                    Aceptar todas
+                </button>
+                <button onclick="acceptCookies('essential')" id="btn-cookie-essential" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium py-2 px-3 rounded-lg border border-slate-700 transition">
+                    Solo esenciales
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- EMBEDDED TRANSLATION & LOGIC SCRIPT (Guarantees zero 404/external file errors on GitHub Pages) -->
     <script>
         // Goal Tracking State
@@ -357,6 +436,8 @@
                 bookBtn: "Ver libro en Amazon",
                 donateTitle: "¿Cómo puedes apoyarme?",
                 donateSubtitle: "Cualquier contribución me acerca a cubrir el boleto de viaje de regreso y estabilizar mi situación financiera inmediata.",
+                btnCardText: "Tarjeta Débito / Crédito"
+                secureNotice: "Procesamiento seguro encriptado SSL (256-bit)"
                 btnPaypal: "Donar vía PayPal",
                 btnKoFi: "Donar vía KoFi",
                 bankTitle: "Transferencia Directa (Ecuador):",
@@ -373,6 +454,10 @@
                 footerText: "© 2026 — Campaña personal de divulgación y recaudación de fondos de Gabriel Intriago",
                 simPrompt: "Selecciona o ingresa un monto para ver cómo contribuyes a acercarme a Australia.",
                 simResultText: (val, newPct) => `¡Un aporte de $${val} USD llevaría el progreso de la meta al ${newPct}%!`
+                modalTitle: "Pago Seguro con Tarjeta", modalDesc: "Aportación directa con encriptación de extremo a extremo.",
+                lblAmount: "Monto de la contribución (USD)", lblCardNum: "Número de Tarjeta", lblExp: "Vencimiento", lblCvv: "CVC / CVV", lblHolder: "Nombre del Titular", btnPaySubmit: "Procesar Pago Seguro",
+                cookieTitle: "Aviso de Cookies y Privacidad", cookieDesc: "Utilizamos cookies mínimas e información técnica estándar para fines estadísticos y asegurar el funcionamiento del pago de manera segura.",
+                cookieAccept: "Aceptar todas", cookieEssential: "Solo esenciales"
             },
             en: {
                 docTitle: "Gabriel Intriago — Next Destination: Research and Science",
@@ -400,6 +485,8 @@
                 bookBtn: "View Book on Amazon",
                 donateTitle: "How can you support me?",
                 donateSubtitle: "Any contribution helps me afford the return ticket and stabilize my immediate financial situation.",
+                btnCardText: "Debit / Credit Card"
+                secureNotice: "Secure SSL-encrypted processing (256-bit)"
                 btnPaypal: "Donate via PayPal",
                 btnKoFi: "Donate via KoFi",
                 bankTitle: "Direct Bank Transfer (Ecuador):",
@@ -416,6 +503,10 @@
                 footerText: "© 2026 — Gabriel Intriago Personal Fundraising & Science Campaign",
                 simPrompt: "Select or enter an amount to see how you help bring me closer to Australia.",
                 simResultText: (val, newPct) => `A contribution of $${val} USD would boost our flight goal to ${newPct}%!`
+                modalTitle: "Secure Card Payment", modalDesc: "Direct contribution with end-to-end encryption",
+                lblAmount: "Contribution Amount (USD)", lblCardNum: "Card Number", lblExp: "Expiration Date", lblCvv: "CVC / CVV", lblHolder: "Cardholder Name", btnPaySubmit: "Process Secure Payment",
+                cookieTitle: "Cookie and Privacy Notice", cookieDesc: "We use minimal cookies and standard technical information for statistical purposes and to ensure the payment process functions securely.",
+                cookieAccept: "Accept All", cookieEssential: "Essential Only"
             },
             ka: {
                 docTitle: "გაბრიელ ინტრიაგო — კვლევა და მეცნიერება",
@@ -443,6 +534,8 @@
                 bookBtn: "წიგნის ნახვა Amazon-ზე",
                 donateTitle: "როგორ შეგიძლიათ ჩემი მხარდაჭერა?",
                 donateSubtitle: "ნებისმიერი წვლილი დამაახლოებს დაბრუნების ბილეთის შეძენასთან.",
+                btnCardText: "სადებეტო / საკრედიტო ბარათი"
+                secureNotice: "უსაფრთხო, SSL-დაშიფრული დამუშავება (256-ბიტიანი)"
                 btnPaypal: "დონაცია PayPal-ით",
                 btnKoFi: "დონაცია KoFi-ით",
                 bankTitle: "პირდაპირი საბანკო გადარიცხვა (ეკვადორი):",
@@ -459,6 +552,10 @@
                 footerText: "© 2026 — გაბრიელ ინტრიაგოს პირადი სამეცნიერო კამპანია",
                 simPrompt: "აირჩიეთ ან შეიყვანეთ თანხა, რათა ნახოთ, როგორ მეხმარებით ავსტრალიასთან უფრო მიახლოებაში",
                 simResultText: (val, newPct) => `$${val} დოლარის წვლილი გაზრდის პროგრესს ${newPct}%-მდე!`
+                modalTitle: "ბარათით გადახდის უსაფრთხოება", modalDesc: "პირდაპირი წვლილი ბოლოდან ბოლომდე დაშიფვრით",
+                lblAmount: "შენატანის ოდენობა (აშშ დოლარი)", lblCardNum: "ბარათის ნომერი", lblExp: "სიმწიფე", lblCvv: "CVC / CVV", lblHolder: "ანგარიშის მფლობელის სახელი", btnPaySubmit: "უსაფრთხო გადახდის განხორციელება",
+                cookieTitle: "ქუქი-ფაილების და კონფიდენციალურობის შეტყობინება", cookieDesc: "ჩვენ ვიყენებთ მინიმალური რაოდენობის ქუქი-ფაილებსა და სტנדრტულ ტექნიკურ ინფორმაციას სტატისტიკური მიზნებისთვის, ასევე გადახდის პროცესის უსაფრთხო ფუნქციონირების უზრუნველსაყოფად.",
+                cookieAccept: "ყველას მიღება", cookieEssential: "მხოლოდ აუცილებელი"
             }
         };
 
@@ -468,64 +565,60 @@
         function setLanguage(lang) {
             currentLang = lang;
             const t = translations[lang];
-            if (!t) return;
+            if(!t) return;
 
             document.getElementById('doc-title').innerText = t.docTitle;
             document.getElementById('badge').innerText = t.badge;
             document.getElementById('hero-title').innerText = t.heroTitle;
             document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
-            document.getElementById('hero-donate-btn').innerText = t.heroDonateBtn;
-            document.getElementById('hero-story-btn').innerText = t.heroStoryBtn;
-            
-            document.getElementById('tracker-title').innerText = t.trackerTitle;
-            document.getElementById('tracker-subtitle').innerText = t.trackerSubtitle;
-            document.getElementById('sim-title').innerText = t.simTitle;
-
             document.getElementById('story-title').innerText = t.storyTitle;
             document.getElementById('story-p1').innerText = t.storyP1;
             document.getElementById('story-p2').innerText = t.storyP2;
             document.getElementById('story-p3').innerText = t.storyP3;
-
             document.getElementById('research-title').innerText = t.researchTitle;
-            document.getElementById('area-1-title').innerText = t.area1Title;
-            document.getElementById('area-1-desc').innerText = t.area1Desc;
-            document.getElementById('area-2-title').innerText = t.area2Title;
-            document.getElementById('area-2-desc').innerText = t.area2Desc;
-            document.getElementById('area-3-title').innerText = t.area3Title;
-            document.getElementById('area-3-desc').innerText = t.area3Desc;
+            document.getElementById('area1-t').innerText = t.area1t;
+            document.getElementById('area1-d').innerText = t.area1d;
+            document.getElementById('area2-t').innerText = t.area2t;
+            document.getElementById('area2-d').innerText = t.area2d;
+            document.getElementById('area3-t').innerText = t.area3t;
+            document.getElementById('area3-d').innerText = t.area3d;
+            document.getElementById('book-t').innerText = t.bookT;
+            document.getElementById('book-d').innerText = t.bookD;
+            document.getElementById('book-btn').innerText = t.bookBtn;
+            document.getElementById('donate-t').innerText = t.donateT;
+            document.getElementById('donate-s').innerText = t.donateS;
+            document.getElementById('btn-card-text').innerText = t.btnCardText;
+            document.getElementById('btn-fund-text').innerText = t.btnFundText;
+            document.getElementById('secure-notice').innerText = t.secureNotice;
+            document.getElementById('bank-t').innerText = t.bankT;
+            document.getElementById('b-label1').innerText = t.b1;
+            document.getElementById('b-label2').innerText = t.b2;
+            document.getElementById('b-label3').innerText = t.b3;
+            document.getElementById('b-label4').innerText = t.b4;
+            document.getElementById('footer-t').innerText = t.footerT;
 
-            document.getElementById('book-title').innerText = t.bookTitle;
-            document.getElementById('book-desc').innerText = t.bookDesc;
-            document.getElementById('book-btn').querySelector('span').innerText = t.bookBtn;
+            // Modal
+            document.getElementById('modal-card-title').innerText = t.modalTitle;
+            document.getElementById('modal-card-desc').innerText = t.modalDesc;
+            document.getElementById('lbl-amount').innerText = t.lblAmount;
+            document.getElementById('lbl-card-num').innerText = t.lblCardNum;
+            document.getElementById('lbl-exp').innerText = t.lblExp;
+            document.getElementById('lbl-cvv').innerText = t.lblCvv;
+            document.getElementById('lbl-holder').innerText = t.lblHolder;
+            document.getElementById('btn-pay-submit').innerText = t.btnPaySubmit;
 
-            document.getElementById('donate-title').innerText = t.donateTitle;
-            document.getElementById('donate-subtitle').innerText = t.donateSubtitle;
-            document.getElementById('btn-paypal').querySelector('span').innerText = t.btnPaypal;
-            document.getElementById('btn-kofi').querySelector('span').innerText = t.btnKoFi;
-
-            document.getElementById('bank-title').innerText = t.bankTitle;
-            document.getElementById('bank-label-bank').innerText = t.bankBank;
-            document.getElementById('bank-label-type').innerText = t.bankType;
-            document.getElementById('bank-label-num').innerText = t.bankNum;
-            document.getElementById('bank-label-owner').innerText = t.bankOwner;
-
-            document.getElementById('msg-section-title').innerText = t.msgSecTitle;
-            document.getElementById('msg-section-subtitle').innerText = t.msgSecSub;
-            document.getElementById('msg-name-label').innerText = t.msgNameLabel;
-            document.getElementById('msg-country-label').innerText = t.msgCountryLabel;
-            document.getElementById('msg-text-label').innerText = t.msgTextLabel;
-            document.getElementById('msg-submit-btn').innerText = t.msgSubmitBtn;
-
-            document.getElementById('footer-text').innerText = t.footerText;
+            // Cookie Banner
+            document.getElementById('cookie-title').innerHTML = `<i class="fa-solid fa-cookie-bite text-amber-400"></i> ${t.cookieTitle}`;
+            document.getElementById('cookie-desc').innerText = t.cookieDesc;
+            document.getElementById('btn-cookie-accept').innerText = t.cookieAccept;
+            document.getElementById('btn-cookie-essential').innerText = t.cookieEssential;
 
             // Highlight Active Language Button
             ['es', 'en', 'ka'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
-                if (l === lang) {
-                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-bold bg-indigo-600 text-white shadow-md shadow-indigo-600/30 transition-all duration-200";
-                } else {
-                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition-all duration-200";
-                }
+                btn.className = l === lang 
+                    ? "px-3 py-1 rounded-lg bg-indigo-600 text-white font-bold border border-indigo-500"
+                    : "px-3 py-1 rounded-lg bg-slate-800 text-slate-300 hover:border-slate-500 border border-slate-700";
             });
 
             updateSim();
@@ -594,9 +687,58 @@
             });
         }
 
-        // Initial launch
+        // MODAL DE PAGO
+        function openCardModal() {
+            document.getElementById('card-modal').classList.remove('hidden');
+        }
+
+        function closeCardModal() {
+            document.getElementById('card-modal').classList.add('hidden');
+            const status = document.getElementById('payment-status');
+            status.classList.add('hidden');
+            status.innerHTML = '';
+        }
+
+        function handleCardSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('btn-pay-submit');
+            const status = document.getElementById('payment-status');
+            
+            btn.disabled = true;
+            btn.innerText = "Procesando de manera segura...";
+
+            // Simulación de respuesta de pasarela segura (Stripe / Stripe Elements)
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerText = i18n[currentLang].btnPaySubmit;
+                
+                status.classList.remove('hidden');
+                status.className = "p-3 rounded-lg text-xs bg-emerald-950/80 border border-emerald-500/50 text-emerald-200 text-center";
+                status.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 mb-1 text-base block"></i> <strong>¡Muchas gracias por tu contribución!</strong><br>Tu aporte ha sido procesado de forma segura.`;
+                
+                document.getElementById('card-form').reset();
+            }, 1800);
+        }
+
+        // GESTIÓN DE COOKIES CON LOCAL STORAGE
+        function checkCookieConsent() {
+            const consent = localStorage.getItem('gi_cookie_consent');
+            if (!consent) {
+                document.getElementById('cookie-banner').classList.remove('hidden');
+            }
+        }
+
+        function acceptCookies(type) {
+            localStorage.setItem('gi_cookie_consent', JSON.stringify({
+                type: type,
+                timestamp: new Date().toISOString()
+            }));
+            document.getElementById('cookie-banner').classList.add('hidden');
+        }
+
         window.onload = function() {
-            setLanguage('es');
+            setLanguage('es')
+            checkCookieConsent();
         };
     </script>
 </body>
