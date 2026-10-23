@@ -16,7 +16,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Custom scrollbar for dark theme */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -37,7 +36,6 @@
     <!-- Top Navigation Bar & Language Selector -->
     <header class="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-            <!-- Brand / Logo -->
             <a href="#" class="flex items-center gap-2 font-bold text-lg text-white hover:text-indigo-400 transition">
                 <span class="bg-gradient-to-tr from-indigo-600 to-blue-500 text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm shadow-lg shadow-indigo-500/30">GI</span>
                 <span class="hidden sm:inline">Gabriel Intriago</span>
@@ -45,13 +43,13 @@
 
             <!-- Language Switcher Buttons -->
             <div class="flex items-center gap-1.5 bg-slate-900/90 p-1 rounded-xl border border-slate-800">
-                <button onclick="setLanguage('es')" id="btn-es" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200">
+                <button onclick="setLanguage('es')" id="btn-es" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 bg-indigo-600 text-white">
                     🇪🇸 Español
                 </button>
-                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200">
+                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 text-slate-300 hover:text-white">
                     🇺🇸 English
                 </button>
-                <button onclick="setLanguage('ka')" id="btn-ka" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200">
+                <button onclick="setLanguage('ka')" id="btn-ka" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 text-slate-300 hover:text-white">
                     🇬🇪 ქართული
                 </button>
             </div>
@@ -78,7 +76,6 @@
                 Ayúdame a cubrir el trayecto de Georgia a Australia y estabilizar mi situación para continuar mi camino de divulgación e investigación científica.
             </p>
 
-            <!-- Quick Action Links -->
             <div class="flex flex-wrap justify-center gap-4 pt-2">
                 <a href="#donate-section" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-6 rounded-xl transition-all shadow-lg shadow-indigo-600/30 flex items-center gap-2">
                     <i class="fa-solid fa-heart text-rose-400"></i>
@@ -147,13 +144,13 @@
         <section id="story-section" class="bg-slate-900/70 border border-slate-800 p-6 sm:p-8 rounded-3xl space-y-4 relative overflow-hidden">
             <div class="absolute -right-12 -top-12 w-48 h-48 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
             
-            <h2 id="story-title" class="text-2xl font-bold text-indigo-300 flex items-center gap-2">
+            <h2 id="story-title-main" class="text-2xl font-bold text-indigo-300 flex items-center gap-2">
                 <i class="fa-solid fa-compass text-indigo-400"></i>
                 Mi Historia y Propósito del Viaje
             </h2>
             <div class="space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
                 <p id="story-p1">
-                    Soy Gabriel Intriago, un ingeniero eléctrico ecuatoriano apasionado por las ciencias exactas que decidió salir de su zona de comfort hacia Georgia y ahora mi objetivo es moverme a Australia para comenzar desde cero. Uno de los grandes motivos que impulsó este viaje fue la necesidad de dar a conocer detalles fundamentales sobre temas de interés global que han sido pasados por alto durante mucho tiempo.
+                    Soy Gabriel Intriago, un ingeniero eléctrico ecuatoriano apasionado por las ciencias exactas que decidió salir de su zona de confort hacia Georgia y ahora mi objetivo es moverme a Australia para comenzar desde cero. Uno de los grandes motivos que impulsó este viaje fue la necesidad de dar a conocer detalles fundamentales sobre temas de interés global que han sido pasados por alto durante mucho tiempo.
                 </p>
                 <p id="story-p2">
                     Parte de esta visión quedó plasmada en mi libro "Tras la Huella del Enemigo", escrito con el apoyo de herramientas de inteligencia artificial y publicado en Amazon, buscando tender puentes entre el conocimiento técnico avanzado y los grandes desafíos globales.
@@ -172,7 +169,6 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <!-- Area 1 -->
                 <div class="p-5 bg-slate-950/60 rounded-2xl border border-slate-800/80 hover:border-indigo-500/50 transition group">
                     <div class="w-10 h-10 rounded-xl bg-indigo-950 text-indigo-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-atom text-lg"></i>
@@ -181,7 +177,6 @@
                     <p id="area-1-desc" class="text-xs text-slate-400 mt-2 leading-relaxed">Modelado teórico, estructura de la materia y fundamentos de la física moderna.</p>
                 </div>
 
-                <!-- Area 2 -->
                 <div class="p-5 bg-slate-950/60 rounded-2xl border border-slate-800/80 hover:border-indigo-500/50 transition group">
                     <div class="w-10 h-10 rounded-xl bg-blue-950 text-blue-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-cloud-sun-rain text-lg"></i>
@@ -190,7 +185,6 @@
                     <p id="area-2-desc" class="text-xs text-slate-400 mt-2 leading-relaxed">Análisis de datos, física de la atmósfera y modelos de cambio climático.</p>
                 </div>
 
-                <!-- Area 3 -->
                 <div class="p-5 bg-slate-950/60 rounded-2xl border border-slate-800/80 hover:border-indigo-500/50 transition group">
                     <div class="w-10 h-10 rounded-xl bg-teal-950 text-teal-400 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-robot text-lg"></i>
@@ -214,7 +208,7 @@
             </div>
             <a href="https://a.co/d/0wVsX5C" target="_blank" id="book-btn" class="whitespace-nowrap bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm py-3 px-6 rounded-xl transition flex items-center gap-2 shadow-lg shadow-amber-500/20 shrink-0">
                 <i class="fa-solid fa-book"></i>
-                <span>Ver libro en Amazon</span>
+                <span id="book-btn-text">Ver libro en Amazon</span>
             </a>
         </section>
 
@@ -227,18 +221,17 @@
                 </p>
             </div>
             
-            <!-- International Buttons -->
             <div class="flex flex-col sm:flex-row justify-center items-center gap-3">
-                <button onclick="openCardModal()" id="btn-card" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-5 rounded-xl transition shadow-lg text-xs flex items-center justify-center gap-2">
+                <button onclick="openCardModal()" id="btn-card" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-lg text-sm flex items-center justify-center gap-2">
                     <i class="fa-solid fa-credit-card"></i> <span id="btn-card-text">Tarjeta Débito / Crédito</span>
                 </button>
                 <a href="https://paypal.me" target="_blank" id="btn-paypal" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-lg shadow-blue-600/30 text-sm flex items-center justify-center gap-2">
                     <i class="fa-brands fa-paypal"></i>
-                    <span>Donar vía PayPal</span>
+                    <span id="paypal-text">Donar vía PayPal</span>
                 </a>
-                <a href="https://ko-fi.com/gabrielintriago" target="_blank" id="btn-paypal" class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-lg shadow-orange-600/30 text-sm flex items-center justify-center gap-2">
-                    <i class="fa-brands fa-kofi"></i>
-                    <span>Donar vía KoFi</span>
+                <a href="https://ko-fi.com/gabrielintriago" target="_blank" id="btn-kofi" class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-lg shadow-orange-600/30 text-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    <span id="kofi-text">Donar vía KoFi</span>
                 </a>
             </div>
             
@@ -287,25 +280,23 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label id="msg-name-label" class="block text-xs font-medium text-slate-300 mb-1">Nombre o Apodo</label>
-                        <input type="text" id="msg-name-label" required placeholder="Ej. Ana M." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
+                        <input type="text" id="msg-name-input" required placeholder="Ej. Ana M." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
                     </div>
                     <div>
                         <label id="msg-country-label" class="block text-xs font-medium text-slate-300 mb-1">País</label>
-                        <input type="text" id="msg-country-label" placeholder="Ej. Ecuador / España" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
+                        <input type="text" id="msg-country-input" placeholder="Ej. Ecuador / España" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500">
                     </div>
                 </div>
                 <div>
                     <label id="msg-text-label" class="block text-xs font-medium text-slate-300 mb-1">Tu mensaje de apoyo</label>
-                    <textarea id="msg-text-label" required rows="2" placeholder="Escribe tus palabras de apoyo aquí..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"></textarea>
+                    <textarea id="msg-text-input" required rows="2" placeholder="Escribe tus palabras de apoyo aquí..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-500"></textarea>
                 </div>
                 <button type="submit" id="msg-submit-btn" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs py-2.5 px-6 rounded-xl transition">
                     Enviar Mensaje
                 </button>
             </form>
 
-            <!-- Wall Messages Container -->
             <div id="messages-wall" class="space-y-3 pt-2">
-                <!-- Initial Mock Message -->
                 <div class="p-4 bg-slate-950/40 rounded-2xl border border-slate-800/60 text-xs space-y-1">
                     <div class="flex justify-between items-center text-slate-400">
                         <span class="font-bold text-indigo-300">Carlos R. <span class="text-slate-500 font-normal">(Ecuador)</span></span>
@@ -358,11 +349,11 @@
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label id="lbl-exp" class="block text-xs font-medium text-slate-300 mb-1">Vencimiento</label>
-                        <input type="text" id="card-exp" placeholder="MM/AA" maxLength="5" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+                        <input type="text" id="card-exp" placeholder="MM/AA" maxlength="5" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
                     </div>
                     <div>
                         <label id="lbl-cvv" class="block text-xs font-medium text-slate-300 mb-1">CVC / CVV</label>
-                        <input type="text" id="card-cvv" placeholder="123" maxLength="4" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
+                        <input type="text" id="card-cvv" placeholder="123" maxlength="4" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
                     </div>
                 </div>
 
@@ -380,7 +371,7 @@
         </div>
     </div>
 
-        <!-- BANNER DE BANNER DE COOKIES Y PRIVACIDAD -->
+    <!-- BANNER DE COOKIES Y PRIVACIDAD -->
     <div id="cookie-banner" class="fixed bottom-0 inset-x-0 bg-slate-950/95 border-t border-slate-800 p-4 z-40 hidden shadow-2xl backdrop-blur-md">
         <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="text-xs text-slate-300 space-y-1 text-center sm:text-left">
@@ -402,13 +393,11 @@
         </div>
     </div>
 
-    <!-- EMBEDDED TRANSLATION & LOGIC SCRIPT (Guarantees zero 404/external file errors on GitHub Pages) -->
+    <!-- SCRIPT DE LÓGICA Y TRADUCCIONES CORREGIDO -->
     <script>
-        // Goal Tracking State
         const goalTotal = 2500;
         let currentAmount = 1280;
 
-        // Translation Dictionary
         const translations = {
             es: {
                 docTitle: "Gabriel Intriago — Siguiente Destino: Investigación y Ciencia",
@@ -420,8 +409,8 @@
                 trackerTitle: "Progreso de la Meta de Vuelo y Estabilización",
                 trackerSubtitle: "Meta total estimada para pasajes de avión Tbilisi-Sidney y costos de movilidad.",
                 simTitle: "Simula tu impacto con un aporte",
-                storyTitle: "Mi Historia y Propósito del Viaje",
-                storyP1: "Uno de los grandes motivos que impulsó este viaje fue la necesidad de dar a conocer detalles fundamentales sobre temas de interés global que han sido pasados por alto durante mucho tiempo.",
+                storyTitleMain: "Mi Historia y Propósito del Viaje",
+                storyP1: "Soy Gabriel Intriago, un ingeniero eléctrico ecuatoriano apasionado por las ciencias exactas que decidió salir de su zona de confort hacia Georgia y ahora mi objetivo es moverme a Australia para comenzar desde cero. Uno de los grandes motivos que impulsó este viaje fue la necesidad de dar a conocer detalles fundamentales sobre temas de interés global que han sido pasados por alto durante mucho tiempo.",
                 storyP2: "Parte de esta visión quedó plasmada en mi libro \"Tras la Huella del Enemigo\", escrito con el apoyo de herramientas de inteligencia artificial y publicado en Amazon, buscando tender puentes entre el conocimiento técnico avanzado y los grandes desafíos globales.",
                 storyP3: "Actualmente me encuentro en Georgia con la meta de moverme hacia Australia. Aunque he postulado a programas de maestría para seguir formándome, aún no he logrado obtener una beca para mis estudios de posgrado. A pesar del impacto económico y las deudas acumuladas, mantengo intacto mi propósito de investigar y divulgar el conocimiento científico.",
                 researchTitle: "Áreas de Interés e Investigación",
@@ -433,13 +422,13 @@
                 area3Desc: "Integración de hardware, automatización y desarrollo de soluciones tecnológicas.",
                 bookTitle: "Obra: \"Tras la Huella del Enemigo\"",
                 bookDesc: "Conoce más sobre las ideas, análisis e investigaciones plasmadas en mi obra escrita con apoyo de inteligencia artificial y publicada en Amazon.",
-                bookBtn: "Ver libro en Amazon",
+                bookBtnText: "Ver libro en Amazon",
                 donateTitle: "¿Cómo puedes apoyarme?",
                 donateSubtitle: "Cualquier contribución me acerca a cubrir el boleto de viaje de regreso y estabilizar mi situación financiera inmediata.",
-                btnCardText: "Tarjeta Débito / Crédito"
-                secureNotice: "Procesamiento seguro encriptado SSL (256-bit)"
-                btnPaypal: "Donar vía PayPal",
-                btnKoFi: "Donar vía KoFi",
+                btnCardText: "Tarjeta Débito / Crédito",
+                secureNotice: "Procesamiento seguro encriptado SSL (256-bit)",
+                paypalText: "Donar vía PayPal",
+                kofiText: "Donar vía KoFi",
                 bankTitle: "Transferencia Directa (Ecuador):",
                 bankBank: "Banco:",
                 bankType: "Tipo de cuenta:",
@@ -452,294 +441,230 @@
                 msgTextLabel: "Tu mensaje de apoyo",
                 msgSubmitBtn: "Enviar Mensaje",
                 footerText: "© 2026 — Campaña personal de divulgación y recaudación de fondos de Gabriel Intriago",
-                simPrompt: "Selecciona o ingresa un monto para ver cómo contribuyes a acercarme a Australia.",
-                simResultText: (val, newPct) => `¡Un aporte de $${val} USD llevaría el progreso de la meta al ${newPct}%!`
-                modalTitle: "Pago Seguro con Tarjeta", modalDesc: "Aportación directa con encriptación de extremo a extremo.",
-                lblAmount: "Monto de la contribución (USD)", lblCardNum: "Número de Tarjeta", lblExp: "Vencimiento", lblCvv: "CVC / CVV", lblHolder: "Nombre del Titular", btnPaySubmit: "Procesar Pago Seguro",
-                cookieTitle: "Aviso de Cookies y Privacidad", cookieDesc: "Utilizamos cookies mínimas e información técnica estándar para fines estadísticos y asegurar el funcionamiento del pago de manera segura.",
-                cookieAccept: "Aceptar todas", cookieEssential: "Solo esenciales"
+                simPrompt: "Selecciona o ingresa un monto para ver cómo contribuyes a acercarme a Australia."
             },
             en: {
                 docTitle: "Gabriel Intriago — Next Destination: Research and Science",
-                badge: "Trip, Science Outreach & Research Campaign",
+                badge: "Travel, Outreach & Research Campaign",
                 heroTitle: "From Georgia to Australia: Science, Outreach, and a New Beginning",
-                heroSubtitle: "Help me cover my journey and stabilize my situation to continue my path in scientific outreach and research.",
+                heroSubtitle: "Help me cover my journey to Australia and stabilize my situation to continue my path in scientific research.",
                 heroDonateBtn: "Support Campaign",
-                heroStoryBtn: "Read My Story",
-                trackerTitle: "Flight & Relocation Goal Progress",
-                trackerSubtitle: "Estimated total goal for Tbilisi-Sidney plane tickets and relocation.",
-                simTitle: "Simulate your impact with a contribution",
-                storyTitle: "My Story and Purpose of the Journey",
-                storyP1: "I am Gabriel Intriago, an Ecuadorian electrical engineer with a passion for the exact sciences; I decided to step out of my comfort zone by moving to Georgia, and now my goal is to relocate to Australia to start from scratch. One of the main reasons behind this journey was the need to shed light on crucial global topics that have been overlooked for a long time.",
-                storyP2: "Part of this vision was published in my book \"Tras la Huella del Enemigo\", co-authored with AI tools on Amazon, bridging advanced technical knowledge with major global challenges.",
-                storyP3: "I am currently in Georgia aiming to move to Australia. Although I have applied to master's programs, I have not yet secured a scholarship. Despite financial hardship and accumulated debt, my passion to research and communicate science remains fully intact.",
+                heroStoryBtn: "My Story",
+                trackerTitle: "Flight Goal & Stabilization Progress",
+                trackerSubtitle: "Estimated total goal for Tbilisi-Sydney airfare and mobility costs.",
+                simTitle: "Simulate your contribution impact",
+                storyTitleMain: "My Story and Purpose",
+                storyP1: "I am Gabriel Intriago, an Ecuadorian electrical engineer passionate about exact sciences who moved to Georgia, and now my goal is to move to Australia to start fresh.",
+                storyP2: "Part of this vision is captured in my book \"Tras la Huella del Enemigo\", written with AI assistance and published on Amazon.",
+                storyP3: "I am currently in Georgia aiming to move to Australia. Despite financial hurdles, my passion to research and communicate science remains fully intact.",
                 researchTitle: "Research Areas & Interests",
                 area1Title: "Nuclear & Quantum Physics",
-                area1Desc: "Theoretical modeling, structure of matter, and foundations of modern physics.",
+                area1Desc: "Theoretical modeling, structure of matter, and modern physics foundations.",
                 area2Title: "Climatology",
                 area2Desc: "Data analysis, atmospheric physics, and climate change models.",
                 area3Title: "Robotics & Autonomy",
                 area3Desc: "Hardware integration, automation, and technological solutions.",
                 bookTitle: "Book: \"Tras la Huella del Enemigo\"",
-                bookDesc: "Discover the research and ideas published in my book written with AI assistance on Amazon.",
-                bookBtn: "View Book on Amazon",
-                donateTitle: "How can you support me?",
-                donateSubtitle: "Any contribution helps me afford the return ticket and stabilize my immediate financial situation.",
-                btnCardText: "Debit / Credit Card"
-                secureNotice: "Secure SSL-encrypted processing (256-bit)"
-                btnPaypal: "Donate via PayPal",
-                btnKoFi: "Donate via KoFi",
+                bookDesc: "Discover the research and ideas published in my book on Amazon.",
+                bookBtnText: "View Book on Amazon",
+                donateTitle: "How Can You Support Me?",
+                donateSubtitle: "Any contribution helps me afford travel tickets and stabilize my immediate financial situation.",
+                btnCardText: "Debit / Credit Card",
+                secureNotice: "Secure SSL encrypted processing (256-bit)",
+                paypalText: "Donate via PayPal",
+                kofiText: "Donate via KoFi",
                 bankTitle: "Direct Bank Transfer (Ecuador):",
                 bankBank: "Bank:",
                 bankType: "Account Type:",
                 bankNum: "Account Number:",
-                bankOwner: "Account Holder / ID:",
-                msgSecTitle: "Support Message Wall",
-                msgSecSub: "Leave a encouragement message or supportive words for Gabriel.",
+                bankOwner: "Holder / ID:",
+                msgSecTitle: "Support & Message Wall",
+                msgSecSub: "Leave a word of encouragement for Gabriel.",
                 msgNameLabel: "Name or Nickname",
                 msgCountryLabel: "Country",
                 msgTextLabel: "Your message of support",
                 msgSubmitBtn: "Send Message",
-                footerText: "© 2026 — Gabriel Intriago Personal Fundraising & Science Campaign",
-                simPrompt: "Select or enter an amount to see how you help bring me closer to Australia.",
-                simResultText: (val, newPct) => `A contribution of $${val} USD would boost our flight goal to ${newPct}%!`
-                modalTitle: "Secure Card Payment", modalDesc: "Direct contribution with end-to-end encryption",
-                lblAmount: "Contribution Amount (USD)", lblCardNum: "Card Number", lblExp: "Expiration Date", lblCvv: "CVC / CVV", lblHolder: "Cardholder Name", btnPaySubmit: "Process Secure Payment",
-                cookieTitle: "Cookie and Privacy Notice", cookieDesc: "We use minimal cookies and standard technical information for statistical purposes and to ensure the payment process functions securely.",
-                cookieAccept: "Accept All", cookieEssential: "Essential Only"
+                footerText: "© 2026 — Gabriel Intriago Personal Campaign",
+                simPrompt: "Select or enter an amount to see how you help me reach Australia."
             },
             ka: {
-                docTitle: "გაბრიელ ინტრიაგო — კვლევა და მეცნიერება",
-                badge: "მოგზაურობა, მეცნიერებისა და კვლევის კამპანია",
+                docTitle: "გაბრიელ ინტრიაგო — შემდეგი დანიშნულება: კვლევა და მეცნიერება",
+                badge: "მოგზაურობის, მეცნიერებისა და კვლევის კამპანია",
                 heroTitle: "საქართველოდან ავსტრალიამდე: მეცნიერება და ახალი დასაწყისი",
-                heroSubtitle: "დამეხმარეთ ჩემი გზის გავლასა და სიტუაციის სტაბილიზაციაში, რათა გავაგრძელო ჩემი გზა სამეცნიერო საზოგადოებასთან ურთიერთობისა და კვლევის სფეროში.",
+                heroSubtitle: "დამეხმარეთ ავსტრალიაში მგზავრობისა და ფინანსური სტაბილიზაციის მიღწევაში.",
                 heroDonateBtn: "კამპანიის მხარდაჭერა",
                 heroStoryBtn: "ჩემი ისტორია",
-                trackerTitle: "ფრენისა და რეპატრიაციის მიზნის პროგრესი",
-                trackerSubtitle: "თბილისი-კიტოს ავიაბილეთებისა და დაბრუნების ხარჯები.",
-                simTitle: "სიპროგრესო კალკულატორი",
-                storyTitle: "ჩემი ისტორია და მოგზაურობის მიზანი",
-                storyP1: "მე გაბრიელ ინტრიაგო ვარ — ეკვადორელი ელექტროინჟინერი, რომელსაც განსაკუთრებული ინტერესი აქვს ზუსტი მეცნიერებების მიმართ. გადავწყვიტე, კომფორტის ზონიდან გამოვსულიყავი და საქართველოში გადმოვსულიყავი; ახლა კი ჩემი მიზანია, ავსტრალიაში გადავიდე და ყველაფერი თავიდან დავიწყო. ამ მოგზაურობის ერთ-ერთი მთავარი მიზანი იყო გლობალური მნიშვნელობის თემების გაშუქება, რომლებიც დიდხანს რჩებოდა ყურადღების მიღმა.",
-                storyP2: "ეს ხედვა ასახულია ჩემს წიგნში, რომელიც ხელოვნური ინტელექტის დახმარებით დაიწერა და Amazon-ზე გამოქვეყნდა.",
-                storyP3: "ამჟამად საქართველოში ვარ და ავსტრალიაში გადასვლას ვგეგმავ. მიუხედავად ფინანსური სირთულეებისა, ჩემი მიზანი მეცნიერული კვლევების გაგრძელებაა.",
+                trackerTitle: "ფრენისა და სტაბილიზაციის მიზნის პროგრესი",
+                trackerSubtitle: "სავარაუდო მთლიანი მიზანი თბილისი-სიდნეის ავიაბილეთებისა და ხარჯებისთვის.",
+                simTitle: "მოახდინეთ შენვლით გამოწვეული პროგრესის სიმულაცია",
+                storyTitleMain: "ჩემი ისტორია და მოგზაურობის მიზანი",
+                storyP1: "მე ვარ გაბრიელ ინტრიაგო, ეკვადორელი ინჟინერი. ახლა მიზნად ისახავს ავსტრალიაში გადასვლას.",
+                storyP2: "ეს ხედვა ასახულია ჩემს წიგნში \"Tras la Huella del Enemigo\".",
+                storyP3: "ამჟამად ვიმყოფები საქართველოში. ჩემი მიზანი მეცნიერული კვლევების გაგრძელებაა.",
                 researchTitle: "კვლევის სფეროები და ინტერესები",
                 area1Title: "ბირთვული და კვანტური ფიზიკა",
-                area1Desc: "თეორიული მოდელირება, მატერიის სტრუქტურა და თანამედროვე ფიზიკა.",
+                area1Desc: "თეორიული მოდელირება, მატერიის სტრუქტურა.",
                 area2Title: "კლიმატოლოგია",
-                area2Desc: "მონაცემთა ანალიზი, ატმოსფერული ფიზიკა და კლიმატის ცვლილება.",
+                area2Desc: "მონაცემთა ანალიზი, ატმოსფერული ფიზიკა.",
                 area3Title: "რობოტიქსი და ავტონომია",
-                area3Desc: "აპარატურის ინტეგრაცია, ავტომატიზაცია და ტექნოლოგიური გადაწყვეტილებები.",
+                area3Desc: "აპარატურის ინტეგრაცია, ავტომატიზაცია.",
                 bookTitle: "წიგნი: \"Tras la Huella del Enemigo\"",
-                bookDesc: "გაეცანით ჩემს წიგნში წარმოდგენილ იდეებსა და კვლევებს Amazon-ზე.",
-                bookBtn: "წიგნის ნახვა Amazon-ზე",
+                bookDesc: "გაეცანით ჩემს წიგნში წარმოდგენილ იდეებს.",
+                bookBtnText: "წიგნის ნახვა Amazon-ზე",
                 donateTitle: "როგორ შეგიძლიათ ჩემი მხარდაჭერა?",
-                donateSubtitle: "ნებისმიერი წვლილი დამაახლოებს დაბრუნების ბილეთის შეძენასთან.",
-                btnCardText: "სადებეტო / საკრედიტო ბარათი"
-                secureNotice: "უსაფრთხო, SSL-დაშიფრული დამუშავება (256-ბიტიანი)"
-                btnPaypal: "დონაცია PayPal-ით",
-                btnKoFi: "დონაცია KoFi-ით",
+                donateSubtitle: "ნებისმიერი წვლილი დამაახლოებს მიზანთან.",
+                btnCardText: "საბანკო ბართი (Debit/Credit)",
+                secureNotice: "უსაფრთხო SSL დამუშავება (256-bit)",
+                paypalText: "დონაცია PayPal-ით",
+                kofiText: "დონაცია KoFi-ით",
                 bankTitle: "პირდაპირი საბანკო გადარიცხვა (ეკვადორი):",
                 bankBank: "ბანკი:",
                 bankType: "ანგარიშის ტიპი:",
                 bankNum: "ანგარიშის ნომერი:",
                 bankOwner: "მფლობელი / ID:",
-                msgSecTitle: "მხარდაჭერის კედელი",
-                msgSecSub: "დაუტოვეთ მხარდამჭერი შეტყობინება გაბრიელს.",
-                msgNameLabel: "სახელი",
+                msgSecTitle: "მხარდაჭერისა და შეტყობინებების კედელი",
+                msgSecSub: "დაუტოვეთ გამამხნევებელი შეტყობინება გაბრიელს.",
+                msgNameLabel: "სახელი ან მეტსახელი",
                 msgCountryLabel: "ქვეყანა",
                 msgTextLabel: "თქვენი შეტყობინება",
                 msgSubmitBtn: "შეტყობინების გაგზავნა",
-                footerText: "© 2026 — გაბრიელ ინტრიაგოს პირადი სამეცნიერო კამპანია",
-                simPrompt: "აირჩიეთ ან შეიყვანეთ თანხა, რათა ნახოთ, როგორ მეხმარებით ავსტრალიასთან უფრო მიახლოებაში",
-                simResultText: (val, newPct) => `$${val} დოლარის წვლილი გაზრდის პროგრესს ${newPct}%-მდე!`
-                modalTitle: "ბარათით გადახდის უსაფრთხოება", modalDesc: "პირდაპირი წვლილი ბოლოდან ბოლომდე დაშიფვრით",
-                lblAmount: "შენატანის ოდენობა (აშშ დოლარი)", lblCardNum: "ბარათის ნომერი", lblExp: "სიმწიფე", lblCvv: "CVC / CVV", lblHolder: "ანგარიშის მფლობელის სახელი", btnPaySubmit: "უსაფრთხო გადახდის განხორციელება",
-                cookieTitle: "ქუქი-ფაილების და კონფიდენციალურობის შეტყობინება", cookieDesc: "ჩვენ ვიყენებთ მინიმალური რაოდენობის ქუქი-ფაილებსა და სტנדრტულ ტექნიკურ ინფორმაციას სტატისტიკური მიზნებისთვის, ასევე გადახდის პროცესის უსაფრთხო ფუნქციონირების უზრუნველსაყოფად.",
-                cookieAccept: "ყველას მიღება", cookieEssential: "მხოლოდ აუცილებელი"
+                footerText: "© 2026 — გაბრიელ ინტრიაგოს პირადი კამპანია",
+                simPrompt: "აირჩიეთ ან შეიყვანეთ თანხა."
             }
         };
 
-        let currentLang = 'es';
-
-        // Set Active Language Function
         function setLanguage(lang) {
-            currentLang = lang;
             const t = translations[lang];
-            if(!t) return;
+            if (!t) return;
 
             document.getElementById('doc-title').innerText = t.docTitle;
-            document.getElementById('badge').innerText = t.badge;
+            document.getElementById('badge').innerHTML = `<i class="fa-solid fa-plane-departure text-indigo-400"></i> ${t.badge}`;
             document.getElementById('hero-title').innerText = t.heroTitle;
             document.getElementById('hero-subtitle').innerText = t.heroSubtitle;
-            document.getElementById('story-title').innerText = t.storyTitle;
+            document.getElementById('hero-donate-btn').innerText = t.heroDonateBtn;
+            document.getElementById('hero-story-btn').innerText = t.heroStoryBtn;
+            document.getElementById('tracker-title').innerHTML = `<i class="fa-solid fa-chart-line text-indigo-400"></i> ${t.trackerTitle}`;
+            document.getElementById('tracker-subtitle').innerText = t.trackerSubtitle;
+            document.getElementById('sim-title').innerHTML = `<i class="fa-solid fa-calculator text-indigo-400"></i> ${t.simTitle}`;
+            document.getElementById('story-title-main').innerHTML = `<i class="fa-solid fa-compass text-indigo-400"></i> ${t.storyTitleMain}`;
             document.getElementById('story-p1').innerText = t.storyP1;
             document.getElementById('story-p2').innerText = t.storyP2;
             document.getElementById('story-p3').innerText = t.storyP3;
-            document.getElementById('research-title').innerText = t.researchTitle;
-            document.getElementById('area1-t').innerText = t.area1t;
-            document.getElementById('area1-d').innerText = t.area1d;
-            document.getElementById('area2-t').innerText = t.area2t;
-            document.getElementById('area2-d').innerText = t.area2d;
-            document.getElementById('area3-t').innerText = t.area3t;
-            document.getElementById('area3-d').innerText = t.area3d;
-            document.getElementById('book-t').innerText = t.bookT;
-            document.getElementById('book-d').innerText = t.bookD;
-            document.getElementById('book-btn').innerText = t.bookBtn;
-            document.getElementById('donate-t').innerText = t.donateT;
-            document.getElementById('donate-s').innerText = t.donateS;
+            document.getElementById('research-title').innerHTML = `<i class="fa-solid fa-flask text-indigo-400"></i> ${t.researchTitle}`;
+            document.getElementById('area-1-title').innerText = t.area1Title;
+            document.getElementById('area-1-desc').innerText = t.area1Desc;
+            document.getElementById('area-2-title').innerText = t.area2Title;
+            document.getElementById('area-2-desc').innerText = t.area2Desc;
+            document.getElementById('area-3-title').innerText = t.area3Title;
+            document.getElementById('area-3-desc').innerText = t.area3Desc;
+            document.getElementById('book-title').innerText = t.bookTitle;
+            document.getElementById('book-desc').innerText = t.bookDesc;
+            document.getElementById('book-btn-text').innerText = t.bookBtnText;
+            document.getElementById('donate-title').innerText = t.donateTitle;
+            document.getElementById('donate-subtitle').innerText = t.donateSubtitle;
             document.getElementById('btn-card-text').innerText = t.btnCardText;
-            document.getElementById('btn-fund-text').innerText = t.btnFundText;
-            document.getElementById('secure-notice').innerText = t.secureNotice;
-            document.getElementById('bank-t').innerText = t.bankT;
-            document.getElementById('b-label1').innerText = t.b1;
-            document.getElementById('b-label2').innerText = t.b2;
-            document.getElementById('b-label3').innerText = t.b3;
-            document.getElementById('b-label4').innerText = t.b4;
-            document.getElementById('footer-t').innerText = t.footerT;
+            document.getElementById('secure-notice').innerHTML = `<i class="fa-solid fa-lock text-emerald-400"></i> ${t.secureNotice}`;
+            document.getElementById('paypal-text').innerText = t.paypalText;
+            document.getElementById('kofi-text').innerText = t.kofiText;
+            document.getElementById('bank-title').innerHTML = `<i class="fa-solid fa-building-columns"></i> ${t.bankTitle}`;
+            document.getElementById('bank-label-bank').innerText = t.bankBank;
+            document.getElementById('bank-label-type').innerText = t.bankType;
+            document.getElementById('bank-label-num').innerText = t.bankNum;
+            document.getElementById('bank-label-owner').innerText = t.bankOwner;
+            document.getElementById('msg-sec-title').innerHTML = `<i class="fa-solid fa-comments text-indigo-400"></i> ${t.msgSecTitle}`;
+            document.getElementById('msg-sec-sub').innerText = t.msgSecSub;
+            document.getElementById('msg-name-label').innerText = t.msgNameLabel;
+            document.getElementById('msg-country-label').innerText = t.msgCountryLabel;
+            document.getElementById('msg-text-label').innerText = t.msgTextLabel;
+            document.getElementById('msg-submit-btn').innerText = t.msgSubmitBtn;
+            document.getElementById('footer-text').innerText = t.footerText;
+            document.getElementById('sim-prompt').innerText = t.simPrompt;
 
-            // Modal
-            document.getElementById('modal-card-title').innerText = t.modalTitle;
-            document.getElementById('modal-card-desc').innerText = t.modalDesc;
-            document.getElementById('lbl-amount').innerText = t.lblAmount;
-            document.getElementById('lbl-card-num').innerText = t.lblCardNum;
-            document.getElementById('lbl-exp').innerText = t.lblExp;
-            document.getElementById('lbl-cvv').innerText = t.lblCvv;
-            document.getElementById('lbl-holder').innerText = t.lblHolder;
-            document.getElementById('btn-pay-submit').innerText = t.btnPaySubmit;
-
-            // Cookie Banner
-            document.getElementById('cookie-title').innerHTML = `<i class="fa-solid fa-cookie-bite text-amber-400"></i> ${t.cookieTitle}`;
-            document.getElementById('cookie-desc').innerText = t.cookieDesc;
-            document.getElementById('btn-cookie-accept').innerText = t.cookieAccept;
-            document.getElementById('btn-cookie-essential').innerText = t.cookieEssential;
-
-            // Highlight Active Language Button
             ['es', 'en', 'ka'].forEach(l => {
                 const btn = document.getElementById(`btn-${l}`);
-                btn.className = l === lang 
-                    ? "px-3 py-1 rounded-lg bg-indigo-600 text-white font-bold border border-indigo-500"
-                    : "px-3 py-1 rounded-lg bg-slate-800 text-slate-300 hover:border-slate-500 border border-slate-700";
+                if (l === lang) {
+                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 bg-indigo-600 text-white";
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 text-slate-300 hover:text-white";
+                }
             });
-
-            updateSim();
         }
 
-        // Donation Calculator Simulator Logic
         function setSimAmount(amount) {
             document.getElementById('sim-input').value = amount;
             updateSim();
         }
 
         function updateSim() {
-            const val = parseFloat(document.getElementById('sim-input').value);
-            const simText = document.getElementById('sim-result-text');
-            const t = translations[currentLang];
-
-            if (isNaN(val) || val <= 0) {
-                simText.innerText = t.simPrompt;
-                return;
+            const val = parseFloat(document.getElementById('sim-input').value) || 0;
+            const promptEl = document.getElementById('sim-prompt');
+            if (val > 0) {
+                const newTotal = currentAmount + val;
+                const newPct = Math.min(100, ((newTotal / goalTotal) * 100)).toFixed(1);
+                promptEl.innerText = `¡Un aporte de $${val} elevaría el progreso a un ${newPct}% ($${newTotal} USD)! Muchas gracias.`;
+            } else {
+                promptEl.innerText = "Selecciona o ingresa un monto para ver cómo contribuyes a acercarme a Australia.";
             }
-
-            const simulatedTotal = currentAmount + val;
-            const newPercentage = ((simulatedTotal / goalTotal) * 100).toFixed(1);
-            simText.innerText = t.simResultText(val, newPercentage);
         }
 
-        // Interactive Support Wall Form
-        function addSupportMessage(event) {
-            event.preventDefault();
-            const name = document.getElementById('msg-name').value.trim();
-            const country = document.getElementById('msg-country').value.trim();
-            const text = document.getElementById('msg-text').value.trim();
-
-            if (!name || !text) return;
-
-            const wall = document.getElementById('messages-wall');
-            const card = document.createElement('div');
-            card.className = "p-4 bg-slate-950/60 rounded-2xl border border-indigo-900/50 text-xs space-y-1 animate-fade-in";
-            
-            const countryLabel = country ? ` (${country})` : '';
-            card.innerHTML = `
-                <div class="flex justify-between items-center text-slate-400">
-                    <span class="font-bold text-indigo-300">${escapeHtml(name)} <span class="text-slate-500 font-normal">${escapeHtml(countryLabel)}</span></span>
-                    <span class="text-[10px] text-indigo-400 font-semibold">Ahora mismo</span>
-                </div>
-                <p class="text-slate-200">${escapeHtml(text)}</p>
-            `;
-
-            wall.prepend(card);
-
-            // Reset form inputs
-            document.getElementById('msg-name').value = '';
-            document.getElementById('msg-country').value = '';
-            document.getElementById('msg-text').value = '';
-        }
-
-        function escapeHtml(string) {
-            return String(string).replace(/[&<>"']/g, function (s) {
-                return {
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#39;'
-                }[s];
-            });
-        }
-
-        // MODAL DE PAGO
         function openCardModal() {
             document.getElementById('card-modal').classList.remove('hidden');
         }
 
         function closeCardModal() {
             document.getElementById('card-modal').classList.add('hidden');
-            const status = document.getElementById('payment-status');
-            status.classList.add('hidden');
-            status.innerHTML = '';
+            document.getElementById('payment-status').classList.add('hidden');
+            document.getElementById('card-form').reset();
         }
 
         function handleCardSubmit(e) {
             e.preventDefault();
-            const btn = document.getElementById('btn-pay-submit');
-            const status = document.getElementById('payment-status');
-            
-            btn.disabled = true;
-            btn.innerText = "Procesando de manera segura...";
-
-            // Simulación de respuesta de pasarela segura (Stripe / Stripe Elements)
+            const statusDiv = document.getElementById('payment-status');
+            statusDiv.className = "text-center p-3 rounded-lg text-xs bg-emerald-950 text-emerald-300 border border-emerald-800";
+            statusDiv.innerText = "¡Simulación de pago procesada con éxito! Gracias por apoyar la campaña de Gabriel.";
+            statusDiv.classList.remove('hidden');
             setTimeout(() => {
-                btn.disabled = false;
-                btn.innerText = i18n[currentLang].btnPaySubmit;
-                
-                status.classList.remove('hidden');
-                status.className = "p-3 rounded-lg text-xs bg-emerald-950/80 border border-emerald-500/50 text-emerald-200 text-center";
-                status.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-400 mb-1 text-base block"></i> <strong>¡Muchas gracias por tu contribución!</strong><br>Tu aporte ha sido procesado de forma segura.`;
-                
-                document.getElementById('card-form').reset();
-            }, 1800);
+                closeCardModal();
+            }, 3000);
         }
 
-        // GESTIÓN DE COOKIES CON LOCAL STORAGE
-        function checkCookieConsent() {
-            const consent = localStorage.getItem('gi_cookie_consent');
-            if (!consent) {
+        function addSupportMessage(event) {
+            event.preventDefault();
+            const name = document.getElementById('msg-name-input').value;
+            const country = document.getElementById('msg-country-input').value;
+            const text = document.getElementById('msg-text-input').value;
+
+            const wall = document.getElementById('messages-wall');
+            const newMsg = document.createElement('div');
+            newMsg.className = "p-4 bg-slate-950/40 rounded-2xl border border-slate-800/60 text-xs space-y-1 animate-fade-in";
+            newMsg.innerHTML = `
+                <div class="flex justify-between items-center text-slate-400">
+                    <span class="font-bold text-indigo-300">${escapeHtml(name)} ${country ? `<span class="text-slate-500 font-normal">(${escapeHtml(country)})</span>` : ''}</span>
+                    <span class="text-[10px]">Justo ahora</span>
+                </div>
+                <p class="text-slate-300">${escapeHtml(text)}</p>
+            `;
+            wall.prepend(newMsg);
+            event.target.reset();
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        // Cookie banner control
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('cookieConsent')) {
                 document.getElementById('cookie-banner').classList.remove('hidden');
             }
-        }
+        });
 
         function acceptCookies(type) {
-            localStorage.setItem('gi_cookie_consent', JSON.stringify({
-                type: type,
-                timestamp: new Date().toISOString()
-            }));
+            localStorage.setItem('cookieConsent', type);
             document.getElementById('cookie-banner').classList.add('hidden');
         }
-
-        window.onload = function() {
-            setLanguage('es')
-            checkCookieConsent();
-        };
     </script>
 </body>
 </html>
+
+```
