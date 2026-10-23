@@ -228,7 +228,10 @@
             </div>
             
             <!-- International Buttons -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-3">
+                <button onclick="openCardModal()" id="btn-card" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 px-5 rounded-xl transition shadow-lg text-xs flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-credit-card"></i> <span id="btn-card-text">Tarjeta Débito / Crédito</span>
+                </button>
                 <a href="https://paypal.me" target="_blank" id="btn-paypal" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-lg shadow-blue-600/30 text-sm flex items-center justify-center gap-2">
                     <i class="fa-brands fa-paypal"></i>
                     <span>Donar vía PayPal</span>
@@ -237,6 +240,11 @@
                     <i class="fa-brands fa-kofi"></i>
                     <span>Donar vía KoFi</span>
                 </a>
+            </div>
+            
+            <div class="text-[10px] text-slate-400 flex items-center justify-center gap-2 mt-1">
+                <i class="fa-solid fa-lock text-emerald-400"></i>
+                <span id="secure-notice">Procesamiento seguro encriptado SSL (256-bit)</span>
             </div>
 
             <!-- Direct Bank Transfer Details (Ecuador) -->
