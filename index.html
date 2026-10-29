@@ -222,9 +222,6 @@
             </div>
             
             <div class="flex flex-col sm:flex-row justify-center items-center gap-3">
-                <button onclick="openCardModal()" id="btn-card" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-lg text-sm flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-credit-card"></i> <span id="btn-card-text">Tarjeta Débito / Crédito</span>
-                </button>
                 <a href="https://paypal.me/maxpower507" target="_blank" id="btn-paypal" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3.5 px-6 rounded-xl transition shadow-lg shadow-blue-600/30 text-sm flex items-center justify-center gap-2">
                     <i class="fa-brands fa-paypal"></i>
                     <span id="paypal-text">Donar vía PayPal</span>
@@ -314,63 +311,6 @@
         <p id="footer-text">© 2026 — Campaña personal de divulgación y recaudación de fondos de Gabriel Intriago</p>
     </footer>
 
-    <!-- MODAL DE PAGO CON TARJETA SEGURO -->
-    <div id="card-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-6 relative shadow-2xl space-y-4">
-            <button onclick="closeCardModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            
-            <div class="text-center space-y-1">
-                <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-950 text-emerald-400 mb-1 border border-emerald-800">
-                    <i class="fa-solid fa-shield-halved text-lg"></i>
-                </div>
-                <h3 id="modal-card-title" class="text-lg font-bold text-white">Pago Seguro con Tarjeta</h3>
-                <p id="modal-card-desc" class="text-xs text-slate-400">Aportación directa con encriptación de extremo a extremo.</p>
-            </div>
-
-            <form id="card-form" onsubmit="handleCardSubmit(event)" class="space-y-3">
-                <div>
-                    <label id="lbl-amount" class="block text-xs font-medium text-slate-300 mb-1">Monto de la contribución (USD)</label>
-                    <div class="relative">
-                        <span class="absolute left-3 top-2.5 text-slate-400 text-sm">$</span>
-                        <input type="number" id="pay-amount" min="1" value="25" required class="w-full bg-slate-800 border border-slate-700 rounded-lg pl-7 pr-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                    </div>
-                </div>
-
-                <div>
-                    <label id="lbl-card-num" class="block text-xs font-medium text-slate-300 mb-1">Número de Tarjeta</label>
-                    <div class="relative">
-                        <input type="text" id="card-num" placeholder="4532 •••• •••• 8892" required class="w-full bg-slate-800 border border-slate-700 rounded-lg pl-3 pr-10 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                        <i class="fa-solid fa-credit-card absolute right-3 top-3 text-slate-500"></i>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label id="lbl-exp" class="block text-xs font-medium text-slate-300 mb-1">Vencimiento</label>
-                        <input type="text" id="card-exp" placeholder="MM/AA" maxlength="5" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                    </div>
-                    <div>
-                        <label id="lbl-cvv" class="block text-xs font-medium text-slate-300 mb-1">CVC / CVV</label>
-                        <input type="text" id="card-cvv" placeholder="123" maxlength="4" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                    </div>
-                </div>
-
-                <div>
-                    <label id="lbl-holder" class="block text-xs font-medium text-slate-300 mb-1">Nombre del Titular</label>
-                    <input type="text" id="card-holder" placeholder="Ej. Juan Pérez" required class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                </div>
-
-                <button type="submit" id="btn-pay-submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-xl transition shadow-lg text-xs mt-2">
-                    Procesar Pago Seguro
-                </button>
-            </form>
-
-            <div id="payment-status" class="hidden text-center p-3 rounded-lg text-xs"></div>
-        </div>
-    </div>
-
     <!-- BANNER DE COOKIES Y PRIVACIDAD -->
     <div id="cookie-banner" class="fixed bottom-0 inset-x-0 bg-slate-950/95 border-t border-slate-800 p-4 z-40 hidden shadow-2xl backdrop-blur-md">
         <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -425,8 +365,6 @@
                 bookBtnText: "Ver libro en Amazon",
                 donateTitle: "¿Cómo puedes apoyarme?",
                 donateSubtitle: "Cualquier contribución me acerca a cubrir el boleto de viaje de regreso y estabilizar mi situación financiera inmediata.",
-                btnCardText: "Tarjeta Débito / Crédito",
-                secureNotice: "Procesamiento seguro encriptado SSL (256-bit)",
                 paypalText: "Donar vía PayPal",
                 kofiText: "Donar vía KoFi",
                 bankTitle: "Transferencia Directa (Ecuador):",
@@ -469,8 +407,6 @@
                 bookBtnText: "View Book on Amazon",
                 donateTitle: "How Can You Support Me?",
                 donateSubtitle: "Any contribution helps me afford travel tickets and stabilize my immediate financial situation.",
-                btnCardText: "Debit / Credit Card",
-                secureNotice: "Secure SSL encrypted processing (256-bit)",
                 paypalText: "Donate via PayPal",
                 kofiText: "Donate via KoFi",
                 bankTitle: "Direct Bank Transfer (Ecuador):",
@@ -513,8 +449,6 @@
                 bookBtnText: "წიგნის ნახვა Amazon-ზე",
                 donateTitle: "როგორ შეგიძლიათ ჩემი მხარდაჭერა?",
                 donateSubtitle: "ნებისმიერი წვლილი დამაახლოებს მიზანთან.",
-                btnCardText: "საბანკო ბართი (Debit/Credit)",
-                secureNotice: "უსაფრთხო SSL დამუშავება (256-bit)",
                 paypalText: "დონაცია PayPal-ით",
                 kofiText: "დონაცია KoFi-ით",
                 bankTitle: "პირდაპირი საბანკო გადარიცხვა (ეკვადორი):",
@@ -562,8 +496,6 @@
             document.getElementById('book-btn-text').innerText = t.bookBtnText;
             document.getElementById('donate-title').innerText = t.donateTitle;
             document.getElementById('donate-subtitle').innerText = t.donateSubtitle;
-            document.getElementById('btn-card-text').innerText = t.btnCardText;
-            document.getElementById('secure-notice').innerHTML = `<i class="fa-solid fa-lock text-emerald-400"></i> ${t.secureNotice}`;
             document.getElementById('paypal-text').innerText = t.paypalText;
             document.getElementById('kofi-text').innerText = t.kofiText;
             document.getElementById('bank-title').innerHTML = `<i class="fa-solid fa-building-columns"></i> ${t.bankTitle}`;
