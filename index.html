@@ -525,27 +525,6 @@
             }
         }
 
-        function openCardModal() {
-            document.getElementById('card-modal').classList.remove('hidden');
-        }
-
-        function closeCardModal() {
-            document.getElementById('card-modal').classList.add('hidden');
-            document.getElementById('payment-status').classList.add('hidden');
-            document.getElementById('card-form').reset();
-        }
-
-        function handleCardSubmit(e) {
-            e.preventDefault();
-            const statusDiv = document.getElementById('payment-status');
-            statusDiv.className = "text-center p-3 rounded-lg text-xs bg-emerald-950 text-emerald-300 border border-emerald-800";
-            statusDiv.innerText = "¡Simulación de pago procesada con éxito! Gracias por apoyar la campaña de Gabriel.";
-            statusDiv.classList.remove('hidden');
-            setTimeout(() => {
-                closeCardModal();
-            }, 3000);
-        }
-
         function addSupportMessage(event) {
             event.preventDefault();
             const name = document.getElementById('msg-name-input').value;
